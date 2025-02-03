@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #2f4157;
+  --secondary: #c7d9e5;
+}
+
+/* NOTE: Will be developed later on for dark mode */
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --primary: #2f4157;
+    --secondary: #c7d9e5;
+  }
+} */
+
+@layer base {
+  body {
+    @apply bg-background font-sans text-foreground;
+  }
+}
