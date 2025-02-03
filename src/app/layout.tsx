@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const generalSansFont = localFont({
   src: [
     {
-      path: "../assets/fonts/GeneralSans-Variable.woff2",ss
+      path: "../assets/fonts/GeneralSans-Variable.woff2",
       style: "normal",
     },
     {
