@@ -11,11 +11,11 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        primary: "#2F4157",
-        secondary: "#C7D9E5"
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
       },
       fontFamily: {
-        generalsans: ["GeneralSans", "sans-serif"], 
+        sans: ["GeneralSans", "sans-serif"],
       },
     },
   },

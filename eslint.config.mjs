@@ -11,6 +11,29 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+  ...compat.plugins("@typescript-eslint"),
+  {
+    rules: {
+      "@typescript-eslint/array-type": "off",
+      "@typescript-eslint/consistent-type-definitions": "off",
+      "@typescript-eslint/consistent-type-imports": [
+        "warn",
+        {
+          prefer: "type-imports",
+          fixStyle: "inline-type-imports",
+        },
+      ],
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          argsIgnorePattern: "^_",
+          ignoreRestSiblings: true,
+        },
+      ],
+
+      "@typescript-eslint/require-await": "off",
+    },
+  },
 ];
 
 export default eslintConfig;
