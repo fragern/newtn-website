@@ -1,6 +1,7 @@
+import { FlatCompat } from "@eslint/eslintrc";
+
 import { dirname } from "path";
 import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -14,6 +15,56 @@ const eslintConfig = [
   ...compat.plugins("@typescript-eslint"),
   {
     rules: {
+      "import/order": [
+        "error",
+        {
+          groups: [
+            "external",
+            "builtin",
+            "internal",
+            "sibling",
+            "parent",
+            "index",
+          ],
+          pathGroups: [
+            {
+              pattern: "react",
+              group: "external",
+              position: "before",
+            },
+            {
+              pattern: "react*",
+              group: "external",
+              position: "before",
+            },
+            {
+              pattern: "react*/**",
+              group: "external",
+              position: "before",
+            },
+            {
+              pattern: "next",
+              group: "external",
+              position: "before",
+            },
+            {
+              pattern: "next*",
+              group: "external",
+              position: "before",
+            },
+            {
+              pattern: "next*/**",
+              group: "external",
+              position: "before",
+            },
+          ],
+          pathGroupsExcludedImportTypes: ["react", "next"],
+          alphabetize: {
+            order: "asc",
+            caseInsensitive: true,
+          },
+        },
+      ],
       "@typescript-eslint/array-type": "off",
       "@typescript-eslint/consistent-type-definitions": "off",
       "@typescript-eslint/consistent-type-imports": [

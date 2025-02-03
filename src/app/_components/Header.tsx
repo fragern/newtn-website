@@ -1,5 +1,6 @@
-import NewtonLogo from "@/assets/icons/NewtonLogo";
 import Link from "next/link";
+
+import NewtonLogo from "@/assets/icons/NewtonLogo";
 
 const Header = () => {
   return (
