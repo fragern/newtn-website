@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @import url("./fonts.css"); */
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -11,6 +9,7 @@
   --secondary: #c7d9e5;
 }
 
+/* NOTE: Will be developed later on for dark mode */
 /* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
