@@ -6,24 +6,29 @@ import ContactUs from "../_components/sections/ContactUs";
 export default function About() {
   return (
     <div className="relative flex flex-col items-center">
-      <Image
-        src="/assets/images/snowflake.svg"
-        className="absolute left-0 top-16 -z-10"
-        alt="Snowflake"
-        width={428}
-        height={728}
-      />
+      <div className="absolute left-0 top-16 -z-10 h-[728px] w-[428px]">
+        <div className="relative h-full w-full">
+          <Image
+            src="/assets/images/snowflake.svg"
+            alt="A snowflake made out of trapeziums"
+            fill
+            className="object-fit h-full w-full"
+          />
+        </div>
+      </div>
 
       <section className="flex w-full flex-col gap-20 px-10 py-64 lg:flex-row lg:items-center lg:justify-between lg:gap-40">
         <div className="flex w-fit flex-none flex-col gap-5 text-4xl">
           <p className="text-4xl font-semibold text-primary">We are</p>
-          <Image
-            src="/assets/logos/newtn/text/navy.svg"
-            className="w-80"
-            alt="Text Logo"
-            width={320}
-            height={65}
-          />
+
+          <div className="relative h-[65px] w-[320px]">
+            <Image
+              src="/assets/logos/newtn/text/navy.svg"
+              alt="Newtn's text logo"
+              fill
+              className="object-fit h-full w-full"
+            />
+          </div>
         </div>
 
         <div className="flex flex-1 flex-col gap-6">
