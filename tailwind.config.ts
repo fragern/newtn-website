@@ -8,14 +8,32 @@ export default {
   ],
   theme: {
     extend: {
+      keyframes: {
+        "horizontal-left-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+        "horizontal-right-scroll": {
+          from: { transform: "translateX(-100%)" },
+          to: { transform: "translateX(0%)" },
+        },
+      },
+      animation: {
+        "horizontal-left-scroll": "horizontal-left-scroll 45s linear infinite",
+        "horizontal-right-scroll":
+          "horizontal-right-scroll 45s linear infinite",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        primary: "var(--primary)",
+        primary: {
+          DEFAULT: "var(--primary)",
+          60: "rgb(47, 65, 87, 0.6)",
+        },
         secondary: "var(--secondary)",
       },
       fontFamily: {
-        sans: ["GeneralSans", "sans-serif"],
+        sans: ["var(--font-sans)", "sans-serif"],
       },
     },
   },
