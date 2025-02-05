@@ -1,3 +1,6 @@
+import { developers, designers } from "@/data/newtn-talents";
+import NewtnTalentCard from "../_components/NewtnTalentCard";
+
 export default function About() {
   return (
     <div className="relative flex flex-col items-center">
@@ -27,12 +30,40 @@ export default function About() {
         </div>
       </section>
 
-      <section className="flex flex-col items-center">
+      <section className="flex w-full flex-col items-center gap-24 pb-32">
         <h1 className="text-center text-4xl font-semibold text-primary">
           Newtn Talents
         </h1>
 
-        <div className=""></div>
+        <div className="flex w-full flex-col gap-32 overflow-hidden">
+          <div className="flex">
+            <div className="flex flex-none animate-horizontal-left-scroll gap-16 px-8">
+              {developers.map((talent, index) => (
+                <NewtnTalentCard key={index} talent={talent} />
+              ))}
+            </div>
+
+            <div className="flex flex-none animate-horizontal-left-scroll gap-16 px-8">
+              {developers.map((talent, index) => (
+                <NewtnTalentCard key={index} talent={talent} />
+              ))}
+            </div>
+          </div>
+
+          <div className="flex">
+            <div className="flex flex-none animate-horizontal-right-scroll gap-16 px-8">
+              {designers.map((talent, index) => (
+                <NewtnTalentCard key={index} talent={talent} />
+              ))}
+            </div>
+
+            <div className="flex flex-none animate-horizontal-right-scroll gap-16 px-8">
+              {designers.map((talent, index) => (
+                <NewtnTalentCard key={index} talent={talent} />
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
