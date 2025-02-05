@@ -22,7 +22,7 @@ export default function About() {
         </div>
 
         <div className="flex flex-1 flex-col gap-6">
-          <p className="text-2xl text-primary">
+          <p className="text-2xl font-medium text-primary">
             Newtn was founded by a team of passionate developers and designers
             driven by innovation. Inspired by Newton&apos;s apple—a symbol of
             curiosity and discovery—we turn ideas into reality, creating
@@ -32,7 +32,7 @@ export default function About() {
       </section>
 
       <section className="flex w-full flex-col items-center gap-24 pb-32">
-        <h1 className="text-center text-4xl font-semibold text-primary">
+        <h1 className="text-center text-3xl font-semibold text-primary">
           Newtn Talents
         </h1>
 
