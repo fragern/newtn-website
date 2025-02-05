@@ -41,7 +41,7 @@ export default function About() {
           Newtn Talents
         </h1>
 
-        <div className="flex w-full flex-col gap-32 overflow-hidden">
+        <div className="flex w-full flex-col gap-24 overflow-hidden lg:gap-32">
           <div className="flex">
             <div className="flex flex-none animate-horizontal-left-scroll gap-16 px-8">
               {developers.map((talent, index) => (
