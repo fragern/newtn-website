@@ -1,10 +1,14 @@
+import Image from "next/image";
+
 const ContactUs = () => {
   return (
     <section className="relative flex w-full flex-col gap-16 bg-secondary px-10 py-32 lg:flex-row lg:items-center">
-      <img
+      <Image
         src="/assets/images/squares-triangles-white-outline.svg"
         className="absolute bottom-0 right-0"
         alt="Snowflake"
+        width={551}
+        height={549}
       />
 
       <div className="z-10 flex max-w-screen-sm flex-col gap-4">
