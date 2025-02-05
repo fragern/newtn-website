@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { developers, designers } from "@/data/newtn-talents";
 import NewtnTalentCard from "../_components/NewtnTalentCard";
 import ContactUs from "../_components/sections/ContactUs";
@@ -5,20 +6,29 @@ import ContactUs from "../_components/sections/ContactUs";
 export default function About() {
   return (
     <div className="relative flex flex-col items-center">
-      <img
-        src="/assets/images/snowflake.svg"
-        className="absolute left-0 top-16 -z-10"
-        alt="Snowflake"
-      />
+      <div className="absolute left-0 top-16 -z-10 h-[728px] w-[428px]">
+        <div className="relative h-full w-full">
+          <Image
+            src="/assets/images/snowflake.svg"
+            alt="A snowflake made out of trapeziums"
+            fill
+            className="object-fit h-full w-full"
+          />
+        </div>
+      </div>
 
       <section className="flex w-full flex-col gap-20 px-10 py-64 lg:flex-row lg:items-center lg:justify-between lg:gap-40">
         <div className="flex w-fit flex-none flex-col gap-5 text-4xl">
           <p className="text-4xl font-semibold text-primary">We are</p>
-          <img
-            src="/assets/logos/newtn/text/navy.svg"
-            className="w-80"
-            alt="Text Logo"
-          />
+
+          <div className="relative h-[65px] w-[320px]">
+            <Image
+              src="/assets/logos/newtn/text/navy.svg"
+              alt="Newtn's text logo"
+              fill
+              className="object-fit h-full w-full"
+            />
+          </div>
         </div>
 
         <div className="flex flex-1 flex-col gap-6">
@@ -36,7 +46,7 @@ export default function About() {
           Newtn Talents
         </h1>
 
-        <div className="flex w-full flex-col gap-32 overflow-hidden">
+        <div className="flex w-full flex-col gap-24 overflow-hidden lg:gap-32">
           <div className="flex">
             <div className="flex flex-none animate-horizontal-left-scroll gap-16 px-8">
               {developers.map((talent, index) => (
