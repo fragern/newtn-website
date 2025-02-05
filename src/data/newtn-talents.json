@@ -1,0 +1,22 @@
+[
+  {
+    "name": "John Doe",
+    "role": "3D Artist",
+    "image": "/images/john.jpg"
+  },
+  {
+    "name": "Jane Smith",
+    "role": "Composer",
+    "image": "/images/jane.jpg"
+  },
+  {
+    "name": "Alice Johnson",
+    "role": "Game Designer",
+    "image": "/images/alice.jpg"
+  },
+  {
+    "name": "Bob Williams",
+    "role": "Programmer",
+    "image": "/images/bob.jpg"
+  }
+]
