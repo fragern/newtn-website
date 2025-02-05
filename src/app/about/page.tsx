@@ -22,6 +22,12 @@ export default function About() {
           </p>
         </div>
       </section>
+
+      <section className="flex flex-col gap-20 px-20 py-32 lg:flex-row lg:items-center lg:justify-center lg:gap-40 lg:px-32">
+        <h1 className="text-4xl font-medium text-primary">Newtn Talents</h1>
+
+        <div className=""></div>
+      </section>
     </div>
   );
 }
