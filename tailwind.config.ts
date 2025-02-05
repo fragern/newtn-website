@@ -26,11 +26,14 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        primary: "var(--primary)",
+        primary: {
+          DEFAULT: "var(--primary)",
+          60: "rgb(47, 65, 87, 0.6)",
+        },
         secondary: "var(--secondary)",
       },
       fontFamily: {
-        sans: ["GeneralSans", "sans-serif"],
+        sans: ["var(--font-sans)", "sans-serif"],
       },
     },
   },

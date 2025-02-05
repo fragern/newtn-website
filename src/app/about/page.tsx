@@ -1,5 +1,6 @@
 import { developers, designers } from "@/data/newtn-talents";
 import NewtnTalentCard from "../_components/NewtnTalentCard";
+import ContactUs from "../_components/sections/ContactUs";
 
 export default function About() {
   return (
@@ -10,7 +11,7 @@ export default function About() {
         alt="Snowflake"
       />
 
-      <section className="flex flex-col gap-20 px-10 py-64 lg:flex-row lg:items-center lg:justify-between lg:gap-40">
+      <section className="flex w-full flex-col gap-20 px-10 py-64 lg:flex-row lg:items-center lg:justify-between lg:gap-40">
         <div className="flex w-fit flex-none flex-col gap-5 text-4xl">
           <p className="text-4xl font-semibold text-primary">We are</p>
           <img
@@ -65,6 +66,8 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      <ContactUs />
     </div>
   );
 }
