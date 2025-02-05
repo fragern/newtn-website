@@ -12,7 +12,7 @@ const ContactUs = () => {
           LET&apos;S BRING YOUR IDEAS TO LIFE.
         </h1>
         <p className="max-w-[400px] text-2xl text-black">
-          Tell us a abit about your project, and we&apos;ll get back to yous
+          Tell us a bit about your project, and we&apos;ll get back to yous
           soon!
         </p>
       </div>
@@ -42,7 +42,7 @@ const ContactUs = () => {
             />
           </div>
           <div>
-            <button className="rounded-full bg-primary-60 px-8 py-4 font-medium text-white">
+            <button className="rounded-full bg-primary px-8 py-4 font-medium text-white hover:bg-white hover:text-primary">
               Send Your Idea
             </button>
           </div>
