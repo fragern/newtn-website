@@ -22,7 +22,7 @@ const ContactUs = () => {
           action=""
           className="flex w-full flex-col gap-8 lg:max-w-screen-md"
         >
-          <div className="flex gap-8">
+          <div className="flex flex-col gap-8 lg:flex-row">
             <input
               type="text"
               placeholder="Your Name..."
