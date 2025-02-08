@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import ContactUs from "./sections/ContactUs";
 
 const Footer = () => {
   return (
     <footer className="w-screen bg-primary text-white">
-      <div className="flex flex-col items-center justify-between px-8 py-20 sm:flex-row">
+      <ContactUs />
+      <div className="flex flex-col justify-between px-8 py-20 md:flex-row">
         <Image
           src="/assets/logos/newtn/icon-text/white.svg"
           alt="Snowflake"

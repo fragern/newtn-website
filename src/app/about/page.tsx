@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { developers, designers } from "@/data/newtn-talents";
 import NewtnTalentCard from "../_components/NewtnTalentCard";
-import ContactUs from "../_components/sections/ContactUs";
 
 export default function About() {
   return (
@@ -76,8 +75,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      <ContactUs />
     </div>
   );
 }
