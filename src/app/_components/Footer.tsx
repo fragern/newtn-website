@@ -20,7 +20,7 @@ const Footer = () => {
               <p className="underline hover:no-underline">Home</p>
             </Link>
             <Link href="/portfolio">
-              <p className="underline hover:no-underline">Portfolios</p>
+              <p className="underline hover:no-underline">Portfolio</p>
             </Link>
             <Link href="/about">
               <p className="underline hover:no-underline">About Us</p>
