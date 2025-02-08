@@ -23,9 +23,9 @@ export default function PortfolioDetail() {
         </p>
       </section>
 
-      <section className="grid grid-cols-3 gap-16 px-10 pt-32">
-        <div className="col-span-1 h-32 px-16">
-          <div className="relative h-full w-full">
+      <section className="flex flex-col items-center gap-8 px-10 pt-32 lg:flex-row lg:items-start lg:gap-16">
+        <div className="flex w-full flex-none justify-center lg:w-1/3">
+          <div className="relative h-[119px] w-full max-w-[306px]">
             <Image
               src="/assets/logos/newtn/text/navy.svg"
               alt="Newtn's text logo"
@@ -35,7 +35,7 @@ export default function PortfolioDetail() {
           </div>
         </div>
 
-        <div className="col-span-2 flex flex-col gap-32">
+        <div className="flex flex-1 flex-col gap-16 lg:gap-32">
           <p>
             The Menjadi Manusia website serves as the official company profile,
             showcasing its mission to foster empathy, storytelling, and
@@ -50,23 +50,23 @@ export default function PortfolioDetail() {
             dialogue.
           </p>
 
-          <div className="flex justify-between gap-16">
-            <div className="flex flex-col">
+          <div className="flex w-full flex-col flex-wrap justify-between gap-8 sm:flex-row">
+            <div className="flex flex-1 flex-col gap-2">
               <h2 className="font-sans font-semibold">Newtn Member</h2>
-              <p>Nafis</p>
+              <p>Nafis, nafis, nafis, naifs, nafis</p>
             </div>
 
-            <div className="flex flex-col">
+            <div className="flex flex-1 flex-col gap-2">
               <h2 className="font-sans font-semibold">Project Duration</h2>
-              <p>Nafis</p>
+              <p>Jun 2024 - Aug 2024</p>
             </div>
 
-            <div className="flex flex-col">
+            <div className="flex flex-1 flex-col gap-2">
               <h2 className="font-sans font-semibold">Tags</h2>
-              <p>Nafis</p>
+              <p>Website, Sass, Design</p>
             </div>
 
-            <div className="flex flex-col items-center">
+            <div className="flex flex-1 flex-col items-center gap-2">
               <h2 className="font-sans font-semibold">View Project Results</h2>
               <Link href="" className="w-full">
                 <button className="w-full rounded-full bg-primary text-white">
@@ -78,17 +78,43 @@ export default function PortfolioDetail() {
         </div>
       </section>
 
-      <section className="grid grid-cols-3 gap-16 px-10 pt-32">
-        <div className="col-span-1 flex flex-col justify-center gap-16">
+      <section className="flex flex-col items-center gap-16 px-10 pt-32 lg:flex-row lg:items-start">
+        <div className="flex w-full max-w-lg flex-none flex-col justify-center gap-8 lg:w-1/3 lg:max-w-none lg:gap-16">
           <h2 className="text-center font-bold">Tech Stack</h2>
 
-          <div className="flex gap-8">
-            <div className="flex w-full flex-col">
+          <div className="flex flex-col gap-8 sm:flex-row">
+            <div className="flex w-full flex-col gap-2">
               <div className="bg-gradient-to-r from-primary to-white px-4 py-2">
                 <h2 className="font-medium text-white">Frontend</h2>
               </div>
 
-              <div></div>
+              <div className="flex flex-wrap gap-6 sm:flex-col sm:gap-1">
+                <div className="flex items-center gap-2">
+                  <div className="relative h-8 w-8 flex-none">
+                    <Image
+                      src="/assets/logos/newtn/text/navy.svg"
+                      alt="Newtn's text logo"
+                      fill
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+
+                  <p>PHP</p>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <div className="relative h-8 w-8 flex-none">
+                    <Image
+                      src="/assets/logos/newtn/text/navy.svg"
+                      alt="Newtn's text logo"
+                      fill
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+
+                  <p>PHP</p>
+                </div>
+              </div>
             </div>
 
             <div className="flex w-full flex-col">
@@ -101,7 +127,7 @@ export default function PortfolioDetail() {
           </div>
         </div>
 
-        <div className="col-span-2 grid h-[500px] grid-cols-3 gap-8">
+        <div className="grid h-[500px] w-full grid-cols-3 gap-8">
           <div className="col-span-1">
             <div className="relative h-full w-full bg-red-200">
               <Image
