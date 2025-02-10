@@ -21,7 +21,7 @@ export default function PortfolioCard({
       <div
         ref={cardRef}
         key={id}
-        className={`portfolio-card flex w-full items-center justify-between rounded-[18px] bg-white px-[30px] py-[45px]`}
+        className={`flex w-full items-center justify-between rounded-[18px] bg-white px-[30px] py-[45px] shadow-portfolio`}
       >
         <div className="w-[423.75px]">
           <p className="mb-[15px] text-2xl">{title}</p>
