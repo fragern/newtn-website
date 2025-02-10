@@ -24,3 +24,21 @@
     @apply bg-background font-sans text-foreground;
   }
 }
+
+.clip-path-trapezoid {
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+  background: linear-gradient(90deg, #2f4157 0%, rgba(199, 217, 229, 0.2) 100%);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.portfolio-card {
+  box-shadow: 0px 3.066px 15.332px 0px rgba(47, 65, 87, 0.3);
+}
