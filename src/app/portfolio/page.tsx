@@ -5,6 +5,7 @@ import { PortfolioCategory } from "@/assets/constants/PortfolioCategory";
 import TopPortfolio from "@/assets/images/TopPortfolio.webp";
 import { type PortfolioCategoryType } from "@/types/PortfolioCategory";
 import CardStack from "./containers/CardStack";
+import ContactUs from "../_components/sections/ContactUs";
 
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] =
@@ -93,22 +94,7 @@ export default function Portfolio() {
         </div>
 
         <div className="h-[50vh]"></div>
-
-        <div className="flex justify-between bg-[#C7D9E5] pb-[148px] pt-[173px]">
-          <div className="pl-8">
-            <h1 className="text-[64px] font-bold leading-[64px] text-[#2F4157]">
-              LET&apos;S BRING YOUR <br /> IDEAS TO LIFE.
-            </h1>
-            <p className="mt-[22px] text-2xl">
-              Tell us a bit about your project, and <br /> we&apos;ll get back
-              to you soon!
-            </p>
-          </div>
-
-          <div className="pr-[125px]">
-            <div className=""></div>
-          </div>
-        </div>
+        <ContactUs />
       </div>
     </>
   );

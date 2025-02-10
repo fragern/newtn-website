@@ -1,4 +1,4 @@
-import { PortfolioCategoryType } from "@/types/PortfolioCategory";
+import { type PortfolioCategoryType } from "@/types/PortfolioCategory";
 
 export const PortfolioCategory: PortfolioCategoryType[] = [
   {
