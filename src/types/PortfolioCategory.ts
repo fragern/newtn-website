@@ -1,4 +1,4 @@
-import { type PortfolioType } from "./Portfolio";
+import { type PortfolioType } from "./PortfolioType";
 
 export type PortfolioCategoryType = {
   id: number;

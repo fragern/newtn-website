@@ -1,7 +1,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { motion, type MotionValue, useTransform } from "framer-motion";
-import { type PortfolioType } from "@/types/Portfolio";
+import { type PortfolioType } from "@/types/PortfolioType";
 
 export default function PortfolioCard({
   title,

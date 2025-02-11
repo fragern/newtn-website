@@ -1,6 +1,19 @@
-export type PortfolioType = {
+import type { TechTool } from "./techTool";
+
+export type Portfolio = {
   id: number;
+  category: string;
   title: string;
-  image: string;
+  description: string;
+  members: string;
+  duration: string;
+  tags: string;
   link: string;
+  frontend: TechTool[];
+  infra: TechTool[];
+  tools: TechTool[];
+  logo: string;
+  coverImage: string;
+  showcaseImage1: string;
+  showcaseImage2: string;
 };
