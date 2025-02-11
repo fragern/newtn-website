@@ -9,7 +9,7 @@ import { assets2D3DPortfolios } from "@/data/portfolio/2d-3d-assets";
 import { appDevelopmentPortfolios } from "@/data/portfolio/app-development";
 import { brandingPortfolios } from "@/data/portfolio/branding";
 import { webDevelopmentPortfolios } from "@/data/portfolio/web-development";
-import type { Portfolio } from "@/types/portfolio";
+import type { Portfolio } from "@/types/Tessy/Portfolio";
 import ContactUs from "../../../_components/sections/ContactUs";
 
 const OPTIONS: EmblaOptionsType = { loop: true };

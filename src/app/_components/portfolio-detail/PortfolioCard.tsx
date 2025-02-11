@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Portfolio } from "@/types/portfolio";
+import type { Portfolio } from "@/types/Tessy/Portfolio";
 
 interface PortfolioCardProps {
   portfolio: Portfolio;

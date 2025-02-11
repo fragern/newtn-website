@@ -1,10 +1,11 @@
-import type { Portfolio } from "@/types/portfolio";
+import type { Portfolio } from "@/types/Tessy/Portfolio";
+import { WebDevelopment } from "./categories";
 import { PHP } from "../tech-stack";
 
 export const webDevelopmentPortfolios: Portfolio[] = [
   {
     id: 1,
-    category: "web-development",
+    category: WebDevelopment,
     title: "Yayasan BUMN",
     description: `
     The Yayasan BUMN website serves as the official information hub for the foundation, showcasing its commitment to social responsibility through initiatives in education, health, environment, and community empowerment. Designed for transparency and engagement, the website provides updates on programs, events, and impact reports while offering opportunities for collaboration and contributions. With an intuitive interface, it connects stakeholders, corporate partners, and the public to Yayasan BUMN's efforts in fostering sustainable development across Indonesia.  
@@ -26,7 +27,7 @@ export const webDevelopmentPortfolios: Portfolio[] = [
   },
   {
     id: 2,
-    category: "web-development",
+    category: WebDevelopment,
     title: "Menjadi Manusia",
     description: `
       The Menjadi Manusia website serves as the official company profile,
@@ -58,7 +59,7 @@ export const webDevelopmentPortfolios: Portfolio[] = [
   },
   {
     id: 3,
-    category: "web-development",
+    category: WebDevelopment,
     title: "Astrogang",
     description: `
       AstroGang is an AI-driven platform that merges advanced technology with street culture to create hyper-realistic, interactive digital experiences. Utilizing cutting-edge 3D avatars, motion-capture technology, and real-time AI adaptation, AstroGang autonomously engages with audiences across platforms like Twitch, Kick, and YouTube. Powered by deep learning models, the platform learns and evolves, delivering dynamic, street-smart interactions. By seamlessly integrating AI with cultural elements, AstroGang redefines virtual engagement, offering a unique blend of entertainment, technology, and real-time interaction.
@@ -80,7 +81,7 @@ export const webDevelopmentPortfolios: Portfolio[] = [
   },
   {
     id: 4,
-    category: "web-development",
+    category: WebDevelopment,
     title: "Web Development #4",
     description: `
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis modi quidem dolorem, quos aliquam placeat ad ipsum, harum amet animi doloremque odio et, facilis pariatur laborum perferendis commodi nesciunt iste?
@@ -102,7 +103,7 @@ export const webDevelopmentPortfolios: Portfolio[] = [
   },
   {
     id: 5,
-    category: "web-development",
+    category: WebDevelopment,
     title: "Web Development #5",
     description: `
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis modi quidem dolorem, quos aliquam placeat ad ipsum, harum amet animi doloremque odio et, facilis pariatur laborum perferendis commodi nesciunt iste?
@@ -124,7 +125,7 @@ export const webDevelopmentPortfolios: Portfolio[] = [
   },
   {
     id: 6,
-    category: "web-development",
+    category: WebDevelopment,
     title: "Web Development #6",
     description: `
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis modi quidem dolorem, quos aliquam placeat ad ipsum, harum amet animi doloremque odio et, facilis pariatur laborum perferendis commodi nesciunt iste?

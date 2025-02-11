@@ -1,4 +1,5 @@
-import type { Portfolio } from "@/types/portfolio";
+import type { Portfolio } from "@/types/Tessy/Portfolio";
+import { Assets2D3D } from "./categories";
 import {
   AdobeAfterEffects,
   AdobeIllustrator,
@@ -11,7 +12,7 @@ import {
 export const assets2D3DPortfolios: Portfolio[] = [
   {
     id: 1,
-    category: "2d-3d-assets",
+    category: Assets2D3D,
     title: "2D and 3D Assets #1",
     description: `
     The Menjadi Manusia website serves as the official company profile,

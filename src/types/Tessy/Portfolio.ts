@@ -1,8 +1,9 @@
-import type { TechTool } from "./techTool";
+import type { Category } from "./Category";
+import type { TechTool } from "../techTool";
 
 export type Portfolio = {
   id: number;
-  category: string;
+  category: Category;
   title: string;
   description: string;
   members: string;

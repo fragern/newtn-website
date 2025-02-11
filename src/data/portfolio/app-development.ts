@@ -1,10 +1,11 @@
-import type { Portfolio } from "@/types/portfolio";
+import type { Portfolio } from "@/types/Tessy/Portfolio";
+import { AppDevelopment } from "./categories";
 import { PHP } from "../tech-stack";
 
 export const appDevelopmentPortfolios: Portfolio[] = [
   {
     id: 1,
-    category: "app-development",
+    category: AppDevelopment,
     title: "App Development #1",
     description: `
       The Menjadi Manusia website serves as the official company profile,

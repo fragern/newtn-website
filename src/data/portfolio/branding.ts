@@ -1,4 +1,5 @@
-import type { Portfolio } from "@/types/portfolio";
+import type { Portfolio } from "@/types/Tessy/Portfolio";
+import { Branding } from "./categories";
 import {
   AdobeAfterEffects,
   AdobeIllustrator,
@@ -11,7 +12,7 @@ import {
 export const brandingPortfolios: Portfolio[] = [
   {
     id: 1,
-    category: "branding",
+    category: Branding,
     title: "Branding #1",
     description: `
       The Menjadi Manusia website serves as the official company profile,
