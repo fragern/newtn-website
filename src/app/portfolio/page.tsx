@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { assets2D3DPortfolios } from "@/data/portfolio/2d-3d-assets";
+import { allPortfolios } from "@/data/portfolio/all-portfolios";
 import { appDevelopmentPortfolios } from "@/data/portfolio/app-development";
 import { brandingPortfolios } from "@/data/portfolio/branding";
 import {
@@ -14,13 +15,6 @@ import type { Portfolio } from "@/types/Portfolio";
 import type { PortfolioCategory } from "@/types/PortfolioCategory";
 import CardStack from "./containers/CardStack";
 import ContactUs from "../_components/sections/ContactUs";
-
-const allPortfolios = [
-  ...webDevelopmentPortfolios,
-  ...appDevelopmentPortfolios,
-  ...assets2D3DPortfolios,
-  ...brandingPortfolios,
-];
 
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] =
