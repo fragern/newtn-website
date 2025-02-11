@@ -35,6 +35,9 @@ export default {
       fontFamily: {
         sans: ["var(--font-sans)", "sans-serif"],
       },
+      boxShadow: {
+        portfolio: "0px 3.066px 15.332px 0px rgba(47, 65, 87, 0.3)",
+      },
     },
   },
   plugins: [],
