@@ -1,5 +1,5 @@
-import type { Portfolio } from "@/types/Tessy/Portfolio";
-import { Assets2D3D } from "./categories";
+import type { Portfolio } from "@/types/Portfolio";
+import { Assets2D3D } from "./portfolio-categories";
 import {
   AdobeAfterEffects,
   AdobeIllustrator,

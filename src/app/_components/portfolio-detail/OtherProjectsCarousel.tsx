@@ -3,7 +3,7 @@
 import React from "react";
 import type { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
-import type { Portfolio } from "@/types/Tessy/Portfolio";
+import type { Portfolio } from "@/types/Portfolio";
 import {
   PrevButton,
   NextButton,

@@ -1,5 +1,5 @@
-import type { Portfolio } from "@/types/Tessy/Portfolio";
-import { AppDevelopment } from "./categories";
+import type { Portfolio } from "@/types/Portfolio";
+import { AppDevelopment } from "./portfolio-categories";
 import { PHP } from "../tech-stack";
 
 export const appDevelopmentPortfolios: Portfolio[] = [

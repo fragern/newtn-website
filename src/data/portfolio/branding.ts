@@ -1,5 +1,5 @@
-import type { Portfolio } from "@/types/Tessy/Portfolio";
-import { Branding } from "./categories";
+import type { Portfolio } from "@/types/Portfolio";
+import { Branding } from "./portfolio-categories";
 import {
   AdobeAfterEffects,
   AdobeIllustrator,

@@ -1,17 +1,16 @@
-import * as React from "react";
+import { useRef } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { type PortfolioCategoryType } from "@/types/PortfolioCategory";
+import type { Portfolio } from "@/types/Portfolio";
 import PortfolioCard from "../components/PortfolioCard";
 
-export default function CardStack({
-  items,
-  onScrollEnd,
-}: {
-  items: PortfolioCategoryType;
+interface CardStackProps {
+  portfolios: Portfolio[];
   onScrollEnd: () => void;
-}) {
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const hasBouncedRef = React.useRef<boolean>(false);
+}
+
+export default function CardStack({ portfolios, onScrollEnd }: CardStackProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const hasBouncedRef = useRef<boolean>(false);
 
   const { scrollYProgress } = useScroll({
     container: containerRef,
@@ -50,20 +49,16 @@ export default function CardStack({
       className="no-scrollbar flex h-[550px] w-full flex-col overflow-y-auto"
       style={{ scrollSnapType: "y mandatory", paddingBottom: "70px" }}
     >
-      {items.portfolios.map((portfolio, index: number) => (
+      {portfolios.map((portfolio) => (
         <motion.div
           key={portfolio.id}
           className="sticky top-0 origin-top pb-[2px]"
-          style={{
-            zIndex: index - items.portfolios.length,
-          }}
+          // style={{
+          //   zIndex: index - portfolios.length,
+          // }}
         >
           <PortfolioCard
-            title={portfolio.title}
-            id={portfolio.id}
-            image={portfolio.image}
-            link={portfolio.link}
-            length={items.portfolios.length}
+            portfolio={portfolio}
             scrollYProgress={scrollYProgress}
           />
         </motion.div>
