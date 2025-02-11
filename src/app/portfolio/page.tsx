@@ -108,7 +108,14 @@ export default function Portfolio() {
                         key={portfolio.id}
                         className="flex flex-col justify-start gap-1 rounded-xl bg-white shadow-md"
                       >
-                        <div className="h-32 w-[189px] rounded-t-xl bg-[#D9D9D9]"></div>
+                        <div className="relative h-32 w-[189px] rounded-t-xl bg-[#D9D9D9]">
+                          <Image
+                            src={portfolio.coverImage}
+                            alt={`${portfolio.title}'s image`}
+                            fill
+                            className="h-full w-full rounded-t-xl object-cover"
+                          />
+                        </div>
                         <p className="p-1 text-base font-medium">
                           {portfolio.title}
                         </p>

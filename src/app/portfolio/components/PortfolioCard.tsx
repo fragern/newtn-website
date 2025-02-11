@@ -49,7 +49,7 @@ export default function PortfolioCard({
             src={portfolio.coverImage}
             alt={`${portfolio.title}'s image`}
             fill
-            className="h-full w-full rounded-xl object-cover"
+            className="h-full w-full rounded-lg object-cover"
           />
         </div>
       </div>
