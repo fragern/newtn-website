@@ -5,10 +5,7 @@ import type { EmblaOptionsType } from "embla-carousel";
 import OtherProjectsCarousel from "@/app/_components/portfolio-detail/OtherProjectsCarousel";
 import TechStacks from "@/app/_components/portfolio-detail/TechStacks";
 import Tools from "@/app/_components/portfolio-detail/Tools";
-import { assets2D3DPortfolios } from "@/data/portfolio/2d-3d-assets";
-import { appDevelopmentPortfolios } from "@/data/portfolio/app-development";
-import { brandingPortfolios } from "@/data/portfolio/branding";
-import { webDevelopmentPortfolios } from "@/data/portfolio/web-development";
+import { allPortfolios } from "@/data/portfolio/all-portfolios";
 import type { Portfolio } from "@/types/Portfolio";
 import ContactUs from "../../../_components/sections/ContactUs";
 
@@ -22,21 +19,9 @@ export default async function Page({
   const portfolioId = (await params).portfolioId;
   const category = (await params).category;
 
-  const categoryMap: Record<string, [Portfolio[], string, boolean]> = {
-    "web-development": [webDevelopmentPortfolios, "Web Development", true],
-    "app-development": [appDevelopmentPortfolios, "App Development", true],
-    "2d-3d-assets": [assets2D3DPortfolios, "2D & 3D Assets", false],
-    branding: [brandingPortfolios, "Branding", false],
-  };
-
-  if (!categoryMap[category]) {
-    notFound();
-  }
-
-  const [portfolios, categoryText, isUsingTechStacks] = categoryMap[category];
-
-  const portfolio = portfolios.find(
-    (p: Portfolio) => p.id === parseInt(portfolioId),
+  const portfolio = allPortfolios.find(
+    (p: Portfolio) =>
+      p.id === parseInt(portfolioId) && p.category.slug === category,
   );
 
   if (!portfolio) {
@@ -61,7 +46,7 @@ export default async function Page({
           {portfolio.title}
         </h1>
         <p className="absolute left-10 top-16 text-xl font-semibold text-white">
-          {`Portfolio ${categoryText} > ${portfolio.title}`}
+          {`Portfolio ${portfolio.category.name} > ${portfolio.title}`}
         </p>
       </section>
 
@@ -112,7 +97,7 @@ export default async function Page({
       </section>
 
       <section className="grid grid-cols-1 gap-8 px-10 pt-16 sm:gap-16 md:grid-cols-3 lg:pt-32">
-        {isUsingTechStacks ? (
+        {portfolio.category.isUsingTechStacks ? (
           <TechStacks frontend={portfolio.frontend} infra={portfolio.infra} />
         ) : (
           <Tools tools={portfolio.tools} />
@@ -141,11 +126,13 @@ export default async function Page({
 
       <section className="flex w-full flex-col gap-12 py-32 sm:gap-16 lg:py-64">
         <h1 className="px-10 text-center text-3xl font-medium sm:text-4xl">
-          Other projects in {categoryText}
+          Other projects in {portfolio.category.name}
         </h1>
 
         <OtherProjectsCarousel
-          projects={portfolios.filter((p: Portfolio) => p !== portfolio)}
+          projects={allPortfolios.filter(
+            (p: Portfolio) => p !== portfolio && p.category.slug === category,
+          )}
           options={OPTIONS}
         />
       </section>

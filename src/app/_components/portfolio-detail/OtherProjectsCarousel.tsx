@@ -36,7 +36,7 @@ const OtherProjectsCarousel: React.FC<PropType> = (props) => {
               className="embla__slide w-[300px] flex-none pl-8 sm:w-[350px] md:w-[400px] lg:w-[450px] xl:w-[500px]"
               key={p.id}
             >
-              <PortfolioCard portfolio={p} category="web-development" />
+              <PortfolioCard portfolio={p} />
             </div>
           ))}
         </div>

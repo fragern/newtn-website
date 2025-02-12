@@ -4,13 +4,9 @@ import type { Portfolio } from "@/types/Portfolio";
 
 interface PortfolioCardProps {
   portfolio: Portfolio;
-  category: string;
 }
 
-const PortfolioCard: React.FC<PortfolioCardProps> = ({
-  portfolio,
-  category,
-}) => {
+const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
   return (
     <div className="flex flex-col gap-8">
       <div className="flex flex-col gap-4">
@@ -31,7 +27,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
       </div>
 
       <Link
-        href={`/portfolio/${category}/${portfolio.id}`}
+        href={`/portfolio/${portfolio.category.slug}/${portfolio.id}`}
         className="mt-2 w-fit rounded-full bg-primary-60 px-4 py-2 text-sm font-medium text-white sm:mt-2.5 md:mt-3 lg:mt-3.5 xl:mt-4"
       >
         View Project Detail
