@@ -1,13 +1,13 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
-import emailjs from "@emailjs/browser";
 
 const ContactUs = () => {
   const formRef = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!formRef.current) {
@@ -15,24 +15,32 @@ const ContactUs = () => {
       return;
     }
 
-    emailjs
-      .sendForm(
-        "service_f2eq0c6",
-        "template_reaik89",
-        formRef.current,
-        "dejxzEmrq1bTiLyjO",
-      )
-      .then(
-        (result) => {
-          console.log("Email sent successfully!", result.text);
-          alert("Your message has been sent!");
-          formRef.current?.reset();
-        },
-        (error) => {
-          console.error("Failed to send email:", error.text);
-          alert("Failed to send message. Please try again.");
-        },
-      );
+    setIsSubmitting(true);
+
+    const formData = new FormData(formRef.current);
+    formData.append("access_key", "adff2ed6-3c60-44b2-b156-4ee3cc752538");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        console.log("Email sent successfully!", result);
+        alert("Your message has been sent!");
+        formRef.current.reset();
+      } else {
+        console.error("Failed to send email:", result);
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("An error occurred. Please try again later.");
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
@@ -92,8 +100,9 @@ const ContactUs = () => {
             <button
               type="submit"
               className="rounded-full bg-primary px-8 py-4 font-medium text-white hover:bg-white hover:text-primary"
+              disabled={isSubmitting}
             >
-              Send Your Idea
+              {isSubmitting ? "Sending..." : "Send Your Idea"}
             </button>
           </div>
         </form>
