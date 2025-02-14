@@ -136,8 +136,6 @@ export default async function Page({
           options={OPTIONS}
         />
       </section>
-
-      <ContactUs />
     </div>
   );
 }

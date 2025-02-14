@@ -12,6 +12,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "embla-carousel-react": "^8.5.2",
     "framer-motion": "^12.4.1",
     "lucide-react": "^0.474.0",

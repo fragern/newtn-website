@@ -122,7 +122,6 @@ export default function Portfolio() {
         </div>
 
         <div className="h-[50vh]"></div>
-        <ContactUs />
       </div>
     </>
   );
