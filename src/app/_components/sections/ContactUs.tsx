@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
+import emailjs from "@emailjs/browser";
 
 const ContactUs = () => {
   const formRef = useRef<HTMLFormElement>(null);
