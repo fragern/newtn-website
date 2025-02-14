@@ -1,23 +1,40 @@
 "use client";
-import * as React from "react";
+
+import { useState } from "react";
 import Image from "next/image";
-import { PortfolioCategory } from "@/data/portfolio";
-import { type PortfolioCategoryType } from "@/types/PortfolioCategory";
+import { assets2D3DPortfolios } from "@/data/portfolio/2d-3d-assets";
+import { allPortfolios } from "@/data/portfolio/all-portfolios";
+import { appDevelopmentPortfolios } from "@/data/portfolio/app-development";
+import { brandingPortfolios } from "@/data/portfolio/branding";
+import {
+  PortfolioCategories,
+  WebDevelopment,
+} from "@/data/portfolio/portfolio-categories";
+import { webDevelopmentPortfolios } from "@/data/portfolio/web-development";
+import type { Portfolio } from "@/types/Portfolio";
+import type { PortfolioCategory } from "@/types/PortfolioCategory";
 import CardStack from "./containers/CardStack";
 import ContactUs from "../_components/sections/ContactUs";
 
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] =
-    React.useState<PortfolioCategoryType>(
-      PortfolioCategory[0] as PortfolioCategoryType,
-    );
+    useState<PortfolioCategory>(WebDevelopment);
+
+  const categoryMap: Record<string, Portfolio[]> = {
+    "web-development": webDevelopmentPortfolios,
+    "app-development": appDevelopmentPortfolios,
+    "2d-3d-assets": assets2D3DPortfolios,
+    branding: brandingPortfolios,
+  };
+
+  const selectedPortfolios = categoryMap[selectedCategory.slug] ?? [];
 
   const handleScrollEnd = () => {
-    const currentIndex = PortfolioCategory.findIndex(
+    const currentIndex = PortfolioCategories.findIndex(
       (cat) => cat.id === selectedCategory.id,
     );
-    const nextIndex = (currentIndex + 1) % PortfolioCategory.length;
-    setSelectedCategory(PortfolioCategory[nextIndex] as PortfolioCategoryType);
+    const nextIndex = (currentIndex + 1) % PortfolioCategories.length;
+    setSelectedCategory(PortfolioCategories[nextIndex] as PortfolioCategory);
   };
 
   return (
@@ -46,7 +63,7 @@ export default function Portfolio() {
 
         <div className="hidden w-screen justify-between pr-8 xl:flex">
           <div className="flex w-[370px] flex-col gap-4">
-            {PortfolioCategory.map((category) => (
+            {PortfolioCategories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category)}
@@ -56,36 +73,48 @@ export default function Portfolio() {
                     : ""
                 }`}
               >
-                {category.title}
+                {category.name}
               </button>
             ))}
           </div>
 
           <div className="w-full">
-            <CardStack items={selectedCategory} onScrollEnd={handleScrollEnd} />
+            <CardStack
+              portfolios={selectedPortfolios}
+              onScrollEnd={handleScrollEnd}
+            />
           </div>
         </div>
 
         <div className="block xl:hidden">
           <div className="flex flex-col gap-10">
-            {PortfolioCategory.map((category) => (
+            {PortfolioCategories.map((category) => (
               <div key={category.id} className="flex flex-col gap-3">
                 <div className="clip-path-trapezoid w-fit px-4 py-1 text-white">
-                  <p className="w-[161px]">{category.title}</p>
+                  <p className="w-[161px]">{category.name}</p>
                 </div>
 
                 <div className="no-scrollbar flex items-center gap-4 self-stretch overflow-x-auto px-4 py-2">
-                  {category.portfolios.map((portfolio) => (
-                    <div
-                      key={portfolio.id}
-                      className="flex flex-col justify-start gap-1 rounded-xl bg-white shadow-md"
-                    >
-                      <div className="h-32 w-[189px] rounded-t-xl bg-[#D9D9D9]"></div>
-                      <p className="p-1 text-base font-medium">
-                        {portfolio.title}
-                      </p>
-                    </div>
-                  ))}
+                  {allPortfolios
+                    .filter((portfolio) => portfolio.category === category)
+                    .map((portfolio) => (
+                      <div
+                        key={portfolio.id}
+                        className="flex flex-col justify-start gap-1 rounded-xl bg-white shadow-md"
+                      >
+                        <div className="relative h-32 w-[189px] rounded-t-xl bg-[#D9D9D9]">
+                          <Image
+                            src={portfolio.coverImage}
+                            alt={`${portfolio.title}'s image`}
+                            fill
+                            className="h-full w-full rounded-t-xl object-cover"
+                          />
+                        </div>
+                        <p className="p-1 text-base font-medium">
+                          {portfolio.title}
+                        </p>
+                      </div>
+                    ))}
                 </div>
               </div>
             ))}

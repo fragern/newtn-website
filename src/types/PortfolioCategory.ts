@@ -1,7 +1,6 @@
-import { type PortfolioType } from "./Portfolio";
-
-export type PortfolioCategoryType = {
+export type PortfolioCategory = {
   id: number;
-  title: string;
-  portfolios: PortfolioType[];
+  slug: string;
+  name: string;
+  isUsingTechStacks: boolean;
 };
