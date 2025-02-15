@@ -7,7 +7,6 @@ import TechStacks from "@/app/_components/portfolio-detail/TechStacks";
 import Tools from "@/app/_components/portfolio-detail/Tools";
 import { allPortfolios } from "@/data/portfolio/all-portfolios";
 import type { Portfolio } from "@/types/Portfolio";
-import ContactUs from "../../../_components/sections/ContactUs";
 
 const OPTIONS: EmblaOptionsType = { loop: true };
 

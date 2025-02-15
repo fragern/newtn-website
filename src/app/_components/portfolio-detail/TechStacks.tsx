@@ -1,4 +1,4 @@
-import type { TechTool } from "@/types/techTool";
+import type { TechTool } from "@/types/TechTool";
 
 interface TechStacksProps {
   frontend: TechTool[];

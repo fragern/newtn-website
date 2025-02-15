@@ -4,7 +4,7 @@ import AdobePhotoshopIcon from "@/assets/icons/tools/AdobePhotoshopIcon";
 import BlenderIcon from "@/assets/icons/tools/BlenderIcon";
 import FigmaIcon from "@/assets/icons/tools/FigmaIcon";
 import ProcreateIcon from "@/assets/icons/tools/ProcreateIcon";
-import type { TechTool } from "@/types/techTool";
+import type { TechTool } from "@/types/TechTool";
 
 export const Figma: TechTool = {
   name: "Figma",

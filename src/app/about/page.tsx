@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { developers, designers } from "@/data/newtn-talents";
+import { designers } from "@/data/newtn-talents/designers";
+import { developers } from "@/data/newtn-talents/developers";
 import NewtnTalentCard from "../_components/NewtnTalentCard";
 
 export default function About() {
