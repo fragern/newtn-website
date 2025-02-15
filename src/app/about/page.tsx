@@ -42,7 +42,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="flex w-full flex-col items-center gap-24 pb-32 pt-32 lg:pt-48">
+      <section className="flex w-full flex-col items-center gap-16 pb-32 pt-32 lg:gap-24 lg:pt-48">
         <h1 className="text-center text-3xl font-semibold text-primary">
           Newtn Talents
         </h1>
@@ -91,7 +91,7 @@ export default function About() {
         </div>
 
         {/* Mobile */}
-        <div className="flex w-full flex-col gap-24 overflow-hidden sm:hidden lg:gap-32">
+        <div className="flex w-full flex-col gap-20 overflow-hidden sm:hidden lg:gap-32">
           <div className="flex">
             <div className="flex flex-none animate-horizontal-left-scroll gap-16 px-8">
               {projectManagers.slice(0, 2).map((talent, index) => (
