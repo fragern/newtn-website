@@ -14,7 +14,6 @@ import { webDevelopmentPortfolios } from "@/data/portfolio/web-development";
 import type { Portfolio } from "@/types/Portfolio";
 import type { PortfolioCategory } from "@/types/PortfolioCategory";
 import CardStack from "./containers/CardStack";
-import ContactUs from "../_components/sections/ContactUs";
 
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] =

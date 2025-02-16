@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { NewtnTalent } from "@/types/newtnTalent";
+import type { NewtnTalent } from "@/types/NewtnTalent";
 
 interface NewtnTalentCardProps {
   talent: NewtnTalent;
