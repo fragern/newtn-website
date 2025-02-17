@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import type { PluginAPI } from "tailwindcss/types/config";
 
 export default {
   content: [
@@ -38,7 +39,24 @@ export default {
       boxShadow: {
         portfolio: "0px 3.066px 15.332px 0px rgba(47, 65, 87, 0.3)",
       },
+      textStroke: {
+        1: "1px",
+      },
+      textStrokeColor: {
+        white: "#FFFFFF",
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }: PluginAPI) {
+      addUtilities({
+        ".text-stroke-1": {
+          "-webkit-text-stroke-width": "1px",
+        },
+        ".text-stroke-white": {
+          "-webkit-text-stroke-color": "#FFF",
+        },
+      });
+    },
+  ],
 } satisfies Config;
