@@ -3,23 +3,38 @@ import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { NewtnService } from "@/data/newtn-service";
-import { PortfolioCategory } from "@/data/portfolio";
-import { type PortfolioCategoryType } from "@/types/PortfolioCategory";
+import { assets2D3DPortfolios } from "@/data/portfolio/2d-3d-assets";
+import { appDevelopmentPortfolios } from "@/data/portfolio/app-development";
+import { brandingPortfolios } from "@/data/portfolio/branding";
+import {
+  PortfolioCategories,
+  WebDevelopment,
+} from "@/data/portfolio/portfolio-categories";
+import { webDevelopmentPortfolios } from "@/data/portfolio/web-development";
+import { type Portfolio } from "@/types/Portfolio";
+import { type PortfolioCategory } from "@/types/PortfolioCategory";
 import ContactUs from "./_components/sections/ContactUs";
 import CardStack from "./portfolio/containers/CardStack";
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] =
-    React.useState<PortfolioCategoryType>(
-      PortfolioCategory[0] as PortfolioCategoryType,
-    );
+    React.useState<PortfolioCategory>(WebDevelopment);
+
+  const categoryMap: Record<string, Portfolio[]> = {
+    "web-development": webDevelopmentPortfolios,
+    "app-development": appDevelopmentPortfolios,
+    "2d-3d-assets": assets2D3DPortfolios,
+    branding: brandingPortfolios,
+  };
+
+  const selectedPortfolios = categoryMap[selectedCategory.slug] ?? [];
 
   const handleScrollEnd = () => {
-    const currentIndex = PortfolioCategory.findIndex(
+    const currentIndex = PortfolioCategories.findIndex(
       (cat) => cat.id === selectedCategory.id,
     );
-    const nextIndex = (currentIndex + 1) % PortfolioCategory.length;
-    setSelectedCategory(PortfolioCategory[nextIndex] as PortfolioCategoryType);
+    const nextIndex = (currentIndex + 1) % PortfolioCategories.length;
+    setSelectedCategory(PortfolioCategories[nextIndex] as PortfolioCategory);
   };
   return (
     <>
@@ -130,7 +145,7 @@ export default function Home() {
           </h1>
 
           <div className="flex flex-wrap items-center justify-center gap-4 px-3 pt-6">
-            {PortfolioCategory.map((category, index) => (
+            {PortfolioCategories.map((category, index) => (
               <button
                 key={index}
                 onClick={() => setSelectedCategory(category)}
@@ -139,13 +154,16 @@ export default function Home() {
                 <div
                   className={`h-5 w-5 rounded-full bg-[#2F4157] ${selectedCategory.id === category.id ? "bg-[#2F4157]" : "opacity-50"}`}
                 ></div>
-                {category.title}
+                {category.name}
               </button>
             ))}
           </div>
 
           <div className="w-full pt-20">
-            <CardStack items={selectedCategory} onScrollEnd={handleScrollEnd} />
+            <CardStack
+              portfolios={selectedPortfolios}
+              onScrollEnd={handleScrollEnd}
+            />
           </div>
           <Link
             href={"/portfolio"}
