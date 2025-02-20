@@ -30,6 +30,10 @@
   background: linear-gradient(90deg, #2f4157 0%, rgba(199, 217, 229, 0.2) 100%);
 }
 
+.clip-path-triangle {
+  clip-path: polygon(0% 100%, 100% 100%, 100% 0%);
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
