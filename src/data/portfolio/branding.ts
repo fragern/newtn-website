@@ -5,9 +5,9 @@ import {
   AdobeIllustrator,
   AdobePhotoshop,
   Blender,
+  DaVinciResolve,
   Figma,
-  Procreate,
-} from "../tools";
+} from "../tech-tools/tools";
 
 export const brandingPortfolios: Portfolio[] = [
   {
@@ -39,7 +39,7 @@ export const brandingPortfolios: Portfolio[] = [
       AdobeAfterEffects,
       AdobeIllustrator,
       Blender,
-      Procreate,
+      DaVinciResolve,
     ],
     logo: "/assets/images/portfolio/web-development/yayasan-bumn/logo.webp",
     coverImage:
