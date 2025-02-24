@@ -1,6 +1,6 @@
 import type { Portfolio } from "@/types/Portfolio";
 import { WebDevelopment } from "./portfolio-categories";
-import { PHP } from "../tech-stack";
+import { NextJS, Nuxt, PHP, React, VueJS } from "../tech-tools/tech-stack";
 
 export const webDevelopmentPortfolios: Portfolio[] = [
   {
@@ -90,7 +90,7 @@ export const webDevelopmentPortfolios: Portfolio[] = [
     duration: "Duration",
     tags: "Tags",
     link: "",
-    frontend: [PHP, PHP, PHP],
+    frontend: [PHP, React, NextJS, VueJS, Nuxt],
     infra: [PHP, PHP, PHP],
     tools: [],
     logo: "/assets/images/portfolio/web-development/yayasan-bumn/logo.webp",

@@ -1,6 +1,6 @@
 import type { Portfolio } from "@/types/Portfolio";
 import { AppDevelopment } from "./portfolio-categories";
-import { PHP } from "../tech-stack";
+import { PHP } from "../tech-tools/tech-stack";
 
 export const appDevelopmentPortfolios: Portfolio[] = [
   {
