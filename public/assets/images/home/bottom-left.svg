@@ -1,0 +1,15 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="69" height="69" fill="#CFDFE9"/>
+<path d="M0 77L69 146H0V77Z" fill="#CFDFE9"/>
+<rect y="154" width="69" height="69" fill="#CFDFE9"/>
+<path d="M0 231L69 300H0V231Z" fill="#CFDFE9"/>
+<path d="M77 0L146 69H77V0Z" fill="#CFDFE9"/>
+<rect x="77" y="77" width="69" height="69" fill="#CFDFE9"/>
+<path d="M77 154L146 223H77V154Z" fill="#CFDFE9"/>
+<rect x="77" y="231" width="69" height="69" fill="#CFDFE9"/>
+<path d="M154 77L223 146H154V77Z" fill="#CFDFE9"/>
+<rect x="154" y="154" width="69" height="69" fill="#CFDFE9"/>
+<path d="M154 231L223 300H154V231Z" fill="#CFDFE9"/>
+<path d="M231 154L300 223H231V154Z" fill="#CFDFE9"/>
+<rect x="231" y="231" width="69" height="69" fill="#CFDFE9"/>
+</svg>
