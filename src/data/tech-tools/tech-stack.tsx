@@ -1,6 +1,6 @@
 import { FaPhp, FaReact, FaVuejs } from "react-icons/fa6";
 import { SiNextdotjs, SiNuxtdotjs } from "react-icons/si";
-import type { TechTool } from "@/types/techTool";
+import type { TechTool } from "@/types/TechTool";
 
 export const React: TechTool = {
   name: "React",

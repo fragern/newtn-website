@@ -34,19 +34,19 @@ export default function PortfolioCard({
         ref={cardRef}
         className={`flex w-full flex-col items-start justify-between rounded-[18px] bg-white px-[30px] py-[45px] shadow-portfolio lg:flex-row lg:items-center`}
       >
-        <div className="flex flex-col gap-6 lg:w-[423.75px]">
+        <div className="flex flex-col gap-4 lg:w-[423.75px] lg:gap-6">
           <p className="text-2xl font-bold lg:mb-[15px] lg:font-normal">
             {portfolio.title}
           </p>
           <Link
             href={`/portfolio/${portfolio.category.slug}/${portfolio.id}`}
-            className="cursor-pointer rounded-full border-[1.5px] border-[#C7D9E582] bg-[#2F415799] bg-opacity-60 px-[18px] py-[10.5px] text-center text-white"
+            className="w-fit cursor-pointer rounded-full border-[1.5px] border-[#C7D9E582] bg-[#2F415799] bg-opacity-60 px-4 py-2 text-center text-sm text-white lg:px-[18px] lg:py-[10.5px] lg:text-base"
           >
             View Detail Projects
           </Link>
         </div>
 
-        <div className="relative mx-auto mt-[90px] h-[200px] w-[300px] rounded-xl bg-black lg:mx-0 lg:mt-0 lg:h-[382.342px] lg:w-[498.75px]">
+        <div className="relative mx-auto mt-[90px] h-[200px] w-full max-w-[300px] rounded-xl bg-black lg:mx-0 lg:mt-0 lg:h-[382.342px] lg:max-w-[498.75px]">
           <Image
             src={portfolio.coverImage}
             alt={`${portfolio.title}'s image`}
