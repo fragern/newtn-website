@@ -46,7 +46,7 @@ export default function CardStack({ portfolios, onScrollEnd }: CardStackProps) {
   return (
     <div
       ref={containerRef}
-      className="no-scrollbar flex h-[550px] w-full flex-col overflow-y-auto"
+      className={`no-scrollbar flex h-[550px] w-full flex-col overflow-y-auto ${portfolios.length > 4 ? "px-12" : portfolios.length > 2 ? "px-4" : ""}`}
       style={{ scrollSnapType: "y mandatory", paddingBottom: "70px" }}
     >
       {portfolios.map((portfolio) => (
