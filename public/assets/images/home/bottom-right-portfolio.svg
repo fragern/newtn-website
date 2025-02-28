@@ -1,0 +1,15 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="-0.5" y="0.5" width="68" height="68" transform="matrix(-1 0 0 1 299 0)" stroke="#C7D9E5"/>
+<path d="M299.5 145.5V78.2071L232.207 145.5H299.5Z" stroke="#C7D9E5"/>
+<rect x="-0.5" y="0.5" width="68" height="68" transform="matrix(-1 0 0 1 299 154)" stroke="#C7D9E5"/>
+<path d="M299.5 299.5V232.207L232.207 299.5H299.5Z" stroke="#C7D9E5"/>
+<path d="M222.5 68.5V1.20711L155.207 68.5H222.5Z" stroke="#C7D9E5"/>
+<rect x="-0.5" y="0.5" width="68" height="68" transform="matrix(-1 0 0 1 222 77)" stroke="#C7D9E5"/>
+<path d="M222.5 222.5V155.207L155.207 222.5H222.5Z" stroke="#C7D9E5"/>
+<rect x="-0.5" y="0.5" width="68" height="68" transform="matrix(-1 0 0 1 222 231)" stroke="#C7D9E5"/>
+<path d="M145.5 145.5V78.2071L78.2071 145.5H145.5Z" stroke="#C7D9E5"/>
+<rect x="-0.5" y="0.5" width="68" height="68" transform="matrix(-1 0 0 1 145 154)" stroke="#C7D9E5"/>
+<path d="M145.5 299.5V232.207L78.2071 299.5H145.5Z" stroke="#C7D9E5"/>
+<path d="M68.5 222.5V155.207L1.20711 222.5H68.5Z" stroke="#C7D9E5"/>
+<rect x="-0.5" y="0.5" width="68" height="68" transform="matrix(-1 0 0 1 68 231)" stroke="#C7D9E5"/>
+</svg>

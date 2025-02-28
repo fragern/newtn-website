@@ -32,6 +32,7 @@ export default {
           60: "rgb(47, 65, 87, 0.6)",
         },
         secondary: "var(--secondary)",
+        teal: "var(--teal)",
       },
       fontFamily: {
         sans: ["var(--font-sans)", "sans-serif"],

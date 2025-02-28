@@ -1,0 +1,15 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="-0.5" width="68" height="68" transform="matrix(1 0 0 -1 0 299)" stroke="#C7D9E5"/>
+<path d="M0.5 154.5V221.793L67.7929 154.5H0.5Z" stroke="#C7D9E5"/>
+<rect x="0.5" y="-0.5" width="68" height="68" transform="matrix(1 0 0 -1 0 145)" stroke="#C7D9E5"/>
+<path d="M0.5 0.5V67.7929L67.7929 0.5H0.5Z" stroke="#C7D9E5"/>
+<path d="M77.5 231.5V298.793L144.793 231.5H77.5Z" stroke="#C7D9E5"/>
+<rect x="0.5" y="-0.5" width="68" height="68" transform="matrix(1 0 0 -1 77 222)" stroke="#C7D9E5"/>
+<path d="M77.5 77.5V144.793L144.793 77.5H77.5Z" stroke="#C7D9E5"/>
+<rect x="0.5" y="-0.5" width="68" height="68" transform="matrix(1 0 0 -1 77 68)" stroke="#C7D9E5"/>
+<path d="M154.5 154.5V221.793L221.793 154.5H154.5Z" stroke="#C7D9E5"/>
+<rect x="0.5" y="-0.5" width="68" height="68" transform="matrix(1 0 0 -1 154 145)" stroke="#C7D9E5"/>
+<path d="M154.5 0.5V67.7929L221.793 0.5H154.5Z" stroke="#C7D9E5"/>
+<path d="M231.5 77.5V144.793L298.793 77.5H231.5Z" stroke="#C7D9E5"/>
+<rect x="0.5" y="-0.5" width="68" height="68" transform="matrix(1 0 0 -1 231 68)" stroke="#C7D9E5"/>
+</svg>

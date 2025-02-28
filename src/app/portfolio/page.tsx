@@ -77,7 +77,7 @@ export default function Portfolio() {
             ))}
           </div>
 
-          <div className="w-full">
+          <div className="mb-12 w-full">
             <CardStack
               portfolios={selectedPortfolios}
               onScrollEnd={handleScrollEnd}
@@ -85,7 +85,7 @@ export default function Portfolio() {
           </div>
         </div>
 
-        <div className="block xl:hidden">
+        <div className="mb-12 block xl:hidden">
           <div className="flex flex-col gap-10">
             {PortfolioCategories.map((category) => (
               <div key={category.id} className="flex flex-col gap-3">
@@ -119,8 +119,6 @@ export default function Portfolio() {
             ))}
           </div>
         </div>
-
-        <div className="h-[50vh]"></div>
       </div>
     </>
   );

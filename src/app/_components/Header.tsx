@@ -10,7 +10,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex items-center justify-between bg-white px-8 py-9">
+    <nav className="relative left-0 top-0 z-50 flex w-full items-center justify-between bg-white px-8 py-6">
       <Link href="/" className="w-28 text-primary md:w-40">
         <NewtonLogo />
       </Link>
@@ -41,7 +41,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute left-0 top-20 flex w-full flex-col items-center gap-6 bg-white py-6 shadow-md md:hidden">
+        <div className="absolute left-0 top-[100%] z-40 flex w-full flex-col items-center gap-6 bg-white py-6 md:hidden">
           <Link
             href="/portfolio"
             className="hover:text-primary-60"
