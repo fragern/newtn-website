@@ -1,47 +1,59 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { useForm } from "react-hook-form";
+
 import Image from "next/image";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
+import sendEmail from "@/app/_server/send-email";
+import type { EmailFormType } from "@/types/emailFormType";
 
 const ContactUs = () => {
-  const formRef = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setValue,
+    reset,
+    setError,
+    clearErrors,
+  } = useForm<EmailFormType>({
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+      captcha: "",
+    },
+  });
 
-    if (!formRef.current) {
-      console.error("Form reference is not available.");
+  const onSubmit = async (data: EmailFormType) => {
+    if (!data.captcha) {
+      setError("captcha", { type: "required", message: "Captcha is required" });
       return;
     }
-
     setIsSubmitting(true);
-
-    const formData = new FormData(formRef.current);
-    formData.append("access_key", "adff2ed6-3c60-44b2-b156-4ee3cc752538");
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
-
-      const result = await response.json();
-      if (result.success) {
-        console.log("Email sent successfully!", result);
-        alert("Your message has been sent!");
-        formRef.current.reset();
-      } else {
-        console.error("Failed to send email:", result);
-        alert("Failed to send message. Please try again.");
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("An error occurred. Please try again later.");
+    const response = await sendEmail(data);
+    if (response.success) {
+      alert("Your message has been sent!");
+    } else {
+      alert("Failed to send message. Please try again.");
     }
-
+    reset();
+    captchaRef.current?.resetCaptcha();
     setIsSubmitting(false);
   };
+
+  const onHCaptchaChange = (token: string) => {
+    setValue("captcha", token, {
+      shouldValidate: true,
+      shouldDirty: true,
+    });
+    clearErrors("captcha");
+  };
+
+  const captchaRef = useRef<HCaptcha>(null);
 
   return (
     <section className="relative flex w-full flex-col gap-8 bg-secondary px-4 py-16 md:gap-16 md:px-10 md:py-32 lg:flex-row lg:items-center">
@@ -67,34 +79,53 @@ const ContactUs = () => {
 
       <div className="z-10 flex flex-1 items-center justify-center">
         <form
-          ref={formRef}
-          onSubmit={sendEmail}
-          className="flex w-full flex-col gap-4 text-primary md:gap-8 lg:max-w-screen-md"
+          className="flex w-full flex-col gap-8 text-primary lg:max-w-screen-md"
+          onSubmit={handleSubmit(onSubmit)}
         >
-          <div className="flex flex-col gap-4 md:gap-8 lg:flex-row">
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name..."
-              className="flex-1 rounded-2xl bg-background p-4 text-sm font-medium md:text-base"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email..."
-              className="flex-1 rounded-2xl bg-background p-4 text-sm font-medium md:text-base"
-              required
-            />
+          <div className="flex flex-col gap-8 lg:flex-row">
+            <div className="flex w-full flex-col gap-2">
+              <input
+                {...register("name", { required: "Name is required" })}
+                type="text"
+                placeholder="Your Name..."
+                className="rounded-2xl bg-background p-4 font-medium"
+              />
+              <ErrorMessage error={errors.name?.message} />
+            </div>
+            <div className="flex w-full flex-col gap-2">
+              <input
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+                    message: "Invalid email address",
+                  },
+                })}
+                type="email"
+                placeholder="Your Email..."
+                className="rounded-2xl bg-background p-4 font-medium"
+              />
+              <ErrorMessage error={errors.email?.message} />
+            </div>
           </div>
-          <div>
+          <div className="flex w-full flex-col gap-2">
             <textarea
-              name="message"
+              {...register("message", { required: "Message is required" })}
               rows={5}
               placeholder="Your Message..."
               className="w-full resize-none rounded-2xl bg-background p-4 text-sm font-medium md:text-base"
               required
             />
+            <ErrorMessage error={errors.message?.message} />
+          </div>
+          <div>
+            <HCaptcha
+              sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY ?? ""}
+              ref={captchaRef}
+              onVerify={onHCaptchaChange}
+              loadAsync
+            />
+            <ErrorMessage error={errors.captcha?.message} />
           </div>
           <div>
             <button
@@ -112,3 +143,8 @@ const ContactUs = () => {
 };
 
 export default ContactUs;
+
+const ErrorMessage = ({ error }: { error?: string | null }) => {
+  if (!error) return null;
+  return <span className="text-sm text-red-500">{error}</span>;
+};

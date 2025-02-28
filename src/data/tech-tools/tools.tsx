@@ -6,7 +6,7 @@ import {
   SiBlender,
   SiDavinciresolve,
 } from "react-icons/si";
-import type { TechTool } from "@/types/TechTool";
+import type { TechTool } from "@/types/techTool";
 
 export const Figma: TechTool = {
   name: "Figma",
