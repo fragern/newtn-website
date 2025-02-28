@@ -1,4 +1,4 @@
-import type { NewtnTalent } from "@/types/newtnTalent";
+import type { NewtnTalent } from "@/types/NewtnTalent";
 
 export const designers: NewtnTalent[] = [
   {

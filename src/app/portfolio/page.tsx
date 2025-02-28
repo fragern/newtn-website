@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { assets2D3DPortfolios } from "@/data/portfolio/2d-3d-assets";
 import { allPortfolios } from "@/data/portfolio/all-portfolios";
 import { appDevelopmentPortfolios } from "@/data/portfolio/app-development";
@@ -97,7 +98,8 @@ export default function Portfolio() {
                   {allPortfolios
                     .filter((portfolio) => portfolio.category === category)
                     .map((portfolio) => (
-                      <div
+                      <Link
+                        href={`/portfolio/${portfolio.category.slug}/${portfolio.id}`}
                         key={portfolio.id}
                         className="flex flex-col justify-start gap-1 rounded-xl bg-white shadow-md"
                       >
@@ -112,7 +114,7 @@ export default function Portfolio() {
                         <p className="p-1 text-base font-medium">
                           {portfolio.title}
                         </p>
-                      </div>
+                      </Link>
                     ))}
                 </div>
               </div>

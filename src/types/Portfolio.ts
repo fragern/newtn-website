@@ -1,5 +1,5 @@
 import type { PortfolioCategory } from "./PortfolioCategory";
-import type { TechTool } from "./techTool";
+import type { TechTool } from "./TechTool";
 
 export type Portfolio = {
   id: number;
