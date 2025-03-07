@@ -96,11 +96,20 @@ export default async function Page({
       </section>
 
       <section className="grid grid-cols-1 gap-8 px-10 pt-16 sm:gap-16 md:grid-cols-3 lg:pt-32">
-        {portfolio.category.isUsingTechStacks ? (
-          <TechStacks frontend={portfolio.frontend} infra={portfolio.infra} />
-        ) : (
-          <Tools tools={portfolio.tools} />
-        )}
+        {(() => {
+          if (portfolio.techStacksOrTools === "techstacks") {
+            return (
+              <TechStacks
+                frontend={portfolio.frontend}
+                infra={portfolio.infra}
+              />
+            );
+          } else if (portfolio.techStacksOrTools === "tools") {
+            return <Tools tools={portfolio.tools} />;
+          } else {
+            return null;
+          }
+        })()}
 
         <div className="item-center col-span-1 flex flex-col justify-center gap-8 sm:col-span-2 sm:flex-row">
           <div className="relative h-[300px] w-full sm:h-[350px] sm:w-[338px] lg:h-[450px] xl:h-[484px]">
