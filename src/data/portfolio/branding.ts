@@ -1,46 +1,63 @@
 import type { Portfolio } from "@/types/Portfolio";
 import { Branding } from "./portfolio-categories";
-import {
-  AdobeAfterEffects,
-  AdobeIllustrator,
-  AdobePhotoshop,
-  Blender,
-  DaVinciResolve,
-  Figma,
-} from "../tech-tools/tools";
+import { AdobeIllustrator, AdobePhotoshop } from "../tech-tools/tools";
 
 export const brandingPortfolios: Portfolio[] = [
   {
     id: 1,
     category: Branding,
-    title: "Branding #1",
-    description: `
-      The Menjadi Manusia website serves as the official company profile,
-      showcasing its mission to foster empathy, storytelling, and
-      meaningful conversations. It provides insights into the
-      organization's vision, values, and impact through various
-      initiatives, including content creation, community engagement, and
-      collaborations. Visitors can explore the company's history,
-      team, and services while staying updated on its latest projects and
-      partnerships. Designed with a clean and intuitive interface, the
-      website reflects Menjadi Manusia's commitment to inspiring
-      positive change and human connection through storytelling and
-      dialogue.
-    `,
-    members: "Nafis",
-    duration: "Jun 2024 - Aug 2024",
-    tags: "Website, Sass, Design",
-    link: "https://www.google.com/",
+    title: "JiwaJiwa",
+    description: `Management service by Menjadi Manusia`,
+    members: "Bintang",
+    duration: "1 Month",
+    tags: "Branding, 2D Asset",
+    link: "",
+    techStacksOrTools: "tools",
     frontend: [],
     infra: [],
-    tools: [
-      Figma,
-      AdobePhotoshop,
-      AdobeAfterEffects,
-      AdobeIllustrator,
-      Blender,
-      DaVinciResolve,
-    ],
+    tools: [AdobeIllustrator, AdobePhotoshop],
+    logo: "/assets/images/portfolio/web-development/yayasan-bumn/logo.webp",
+    coverImage:
+      "/assets/images/portfolio/web-development/yayasan-bumn/cover-image.webp",
+    showcaseImage1:
+      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-1.webp",
+    showcaseImage2:
+      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-2.webp",
+  },
+  {
+    id: 2,
+    category: Branding,
+    title: "Memilih Masa Depan",
+    description: `Youth community empowering young people to create a better future through education and collaboration.`,
+    members: "Bintang",
+    duration: "1 Month",
+    tags: "Branding, 2D Asset",
+    link: "",
+    techStacksOrTools: "tools",
+    frontend: [],
+    infra: [],
+    tools: [AdobeIllustrator, AdobePhotoshop],
+    logo: "/assets/images/portfolio/web-development/yayasan-bumn/logo.webp",
+    coverImage:
+      "/assets/images/portfolio/web-development/yayasan-bumn/cover-image.webp",
+    showcaseImage1:
+      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-1.webp",
+    showcaseImage2:
+      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-2.webp",
+  },
+  {
+    id: 3,
+    category: Branding,
+    title: "Trans Makmur Bersama",
+    description: `TMB, a tugboat and barge company, required a fresh rebrand to better reflect its core values of dependability and resilience. The redesigned identity incorporates a modern, minimalist aesthetic, reinforcing the company's strength and reliability.`,
+    members: "Bryan",
+    duration: "1 Month",
+    tags: "Branding, 2D Asset",
+    link: "",
+    techStacksOrTools: "tools",
+    frontend: [],
+    infra: [],
+    tools: [AdobeIllustrator, AdobePhotoshop],
     logo: "/assets/images/portfolio/web-development/yayasan-bumn/logo.webp",
     coverImage:
       "/assets/images/portfolio/web-development/yayasan-bumn/cover-image.webp",

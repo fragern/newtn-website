@@ -10,6 +10,7 @@ export type Portfolio = {
   duration: string;
   tags: string;
   link: string;
+  techStacksOrTools: string;
   frontend: TechTool[];
   infra: TechTool[];
   tools: TechTool[];

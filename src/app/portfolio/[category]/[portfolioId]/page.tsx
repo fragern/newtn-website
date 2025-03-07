@@ -44,8 +44,11 @@ export default async function Page({
         <h1 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-5xl font-bold text-white">
           {portfolio.title}
         </h1>
-        <p className="absolute left-10 top-16 text-xl font-semibold text-white">
-          {`Portfolio ${portfolio.category.name} > ${portfolio.title}`}
+        <p className="absolute left-10 top-16 text-base font-semibold text-white sm:text-lg md:text-xl">
+          <Link href="/portfolio" className="hover:underline">
+            Portfolio
+          </Link>{" "}
+          {` > ${portfolio.category.name} > ${portfolio.title}`}
         </p>
       </section>
 
@@ -96,11 +99,20 @@ export default async function Page({
       </section>
 
       <section className="grid grid-cols-1 gap-8 px-10 pt-16 sm:gap-16 md:grid-cols-3 lg:pt-32">
-        {portfolio.category.isUsingTechStacks ? (
-          <TechStacks frontend={portfolio.frontend} infra={portfolio.infra} />
-        ) : (
-          <Tools tools={portfolio.tools} />
-        )}
+        {(() => {
+          if (portfolio.techStacksOrTools === "techstacks") {
+            return (
+              <TechStacks
+                frontend={portfolio.frontend}
+                infra={portfolio.infra}
+              />
+            );
+          } else if (portfolio.techStacksOrTools === "tools") {
+            return <Tools tools={portfolio.tools} />;
+          } else {
+            return null;
+          }
+        })()}
 
         <div className="item-center col-span-1 flex flex-col justify-center gap-8 sm:col-span-2 sm:flex-row">
           <div className="relative h-[300px] w-full sm:h-[350px] sm:w-[338px] lg:h-[450px] xl:h-[484px]">

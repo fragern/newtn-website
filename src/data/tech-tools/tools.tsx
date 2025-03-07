@@ -5,6 +5,7 @@ import {
   SiAdobephotoshop,
   SiBlender,
   SiDavinciresolve,
+  SiRive,
 } from "react-icons/si";
 import type { TechTool } from "@/types/TechTool";
 
@@ -44,4 +45,9 @@ export const DaVinciResolve: TechTool = {
   icon: (
     <SiDavinciresolve className="h-full w-full object-contain text-primary" />
   ),
+};
+
+export const Rive: TechTool = {
+  name: "Rive",
+  icon: <SiRive className="h-full w-full object-contain text-primary" />,
 };
