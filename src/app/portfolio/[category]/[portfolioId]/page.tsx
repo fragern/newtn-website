@@ -44,8 +44,11 @@ export default async function Page({
         <h1 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-5xl font-bold text-white">
           {portfolio.title}
         </h1>
-        <p className="absolute left-10 top-16 text-xl font-semibold text-white">
-          {`Portfolio ${portfolio.category.name} > ${portfolio.title}`}
+        <p className="absolute left-10 top-16 text-base font-semibold text-white sm:text-lg md:text-xl">
+          <Link href="/portfolio" className="hover:underline">
+            Portfolio
+          </Link>{" "}
+          {` > ${portfolio.category.name} > ${portfolio.title}`}
         </p>
       </section>
 
