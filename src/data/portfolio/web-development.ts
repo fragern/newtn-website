@@ -27,7 +27,7 @@ export const webDevelopmentPortfolios: Portfolio[] = [
   {
     id: 2,
     category: WebDevelopment,
-    title: "Menjadi Manusia Company Profile Website",
+    title: "Menjadi Manusia",
     description: `The Menjadi Manusia website serves as the official company profile, showcasing its mission to foster empathy, storytelling, and meaningful conversations. It provides insights into the organization's vision, values, and impact through various initiatives, including content creation, community engagement, and collaborations. Visitors can explore the company's history, team, and services while staying updated on its latest projects and partnerships. Designed with a clean and intuitive interface, the website reflects Menjadi Manusia's commitment to inspiring positive change and human connection through storytelling and dialogue.`,
     members: "Nafis",
     duration: "Jun 2024",
