@@ -2,48 +2,48 @@ import type { NewtnTalent } from "@/types/NewtnTalent";
 
 export const designers: NewtnTalent[] = [
   {
-    name: "Dani",
+    name: "Hario Daniswara",
     role: "UI/UX Designer",
-    image: "/assets/images/newtn-talents/designers/dani.webp",
+    linkedIn: "https://www.linkedin.com/in/harioaji/",
   },
   {
-    name: "Rian",
+    name: "Henrian Pranata",
     role: "UI/UX Designer",
-    image: "/assets/images/newtn-talents/designers/rian.webp",
+    linkedIn: "https://www.linkedin.com/in/henrianpranata/",
   },
   {
-    name: "Arief",
+    name: "Arief Yunansyah",
     role: "Assets Designer",
-    image: "/assets/images/newtn-talents/designers/arief.webp",
+    linkedIn: "https://www.linkedin.com/in/ariefyunansyah/",
   },
   {
-    name: "Nabil",
+    name: "Muhammad Nabil",
     role: "Assets Designer",
-    image: "/assets/images/newtn-talents/designers/nabil.webp",
+    linkedIn: "https://www.linkedin.com/in/nblgraphics/",
   },
   {
-    name: "Reza",
+    name: "Reza Athallah",
     role: "UI/UX Designer",
-    image: "/assets/images/newtn-talents/designers/reza.webp",
+    linkedIn: "https://www.linkedin.com/in/rezaaar/",
   },
   {
-    name: "Rayhan",
+    name: "Rayhan Rafferty",
     role: "Assets Designer",
-    image: "/assets/images/newtn-talents/designers/rayhan.webp",
+    linkedIn: "https://www.linkedin.com/in/qwerayhan/",
   },
   {
-    name: "Hose",
+    name: "Hose Anderson",
     role: "Assets Designer",
-    image: "/assets/images/newtn-talents/designers/hose.webp",
+    linkedIn: "https://www.linkedin.com/in/mikhael-hose-anderson/",
   },
   {
-    name: "Ulen",
+    name: "Ulen Darasutra",
     role: "UI/UX Designer",
-    image: "/assets/images/newtn-talents/designers/ulen.webp",
+    linkedIn: "https://www.linkedin.com/in/ulendara/",
   },
   {
-    name: "Bryan",
+    name: "Bryan Wijaya",
     role: "Assets Designer",
-    image: "/assets/images/newtn-talents/designers/bryan.webp",
+    linkedIn: "https://www.linkedin.com/in/bryan-wijaya-a25b601b8/",
   },
 ];

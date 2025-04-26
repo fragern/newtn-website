@@ -2,23 +2,23 @@ import type { NewtnTalent } from "@/types/NewtnTalent";
 
 export const projectManagers: NewtnTalent[] = [
   {
-    name: "Theo",
+    name: "Theo Mangowal",
     role: "Project Manager",
-    image: "/assets/images/newtn-talents/developers/theo.webp",
+    linkedIn: "https://www.linkedin.com/in/tmangowal/",
   },
   {
-    name: "Nuel",
+    name: "Manuel Yoseph Ray",
     role: "Project Manager",
-    image: "/assets/images/newtn-talents/developers/nuel.webp",
+    linkedIn: "https://www.linkedin.com/in/manuelyosephray/",
   },
   {
-    name: "Felicia",
+    name: "Felicia Diana Angelica",
     role: "Project Manager",
-    image: "/assets/images/newtn-talents/designers/felicia.webp",
+    linkedIn: "https://www.linkedin.com/in/feliciadiana/",
   },
   {
-    name: "Nafis",
+    name: "Muhammad Nafis Aimanurrohman",
     role: "Project Manager",
-    image: "/assets/images/newtn-talents/designers/nafis.webp",
+    linkedIn: "https://www.linkedin.com/in/muhammad-nafis-aimanurrohman/",
   },
 ];

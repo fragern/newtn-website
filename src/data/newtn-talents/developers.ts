@@ -2,43 +2,43 @@ import type { NewtnTalent } from "@/types/NewtnTalent";
 
 export const developers: NewtnTalent[] = [
   {
-    name: "Eric",
+    name: "Eric Fernando",
     role: "Full-stack Developer",
-    image: "/assets/images/newtn-talents/developers/eric.webp",
+    linkedIn: "https://www.linkedin.com/in/ericfrndo/",
   },
   {
-    name: "Agfi",
+    name: "Agfi Hermawan",
     role: "Full-stack Developer",
-    image: "/assets/images/newtn-talents/developers/agfi.webp",
+    linkedIn: "https://www.linkedin.com/in/thariqagfihermawan/",
   },
   {
-    name: "Mika",
+    name: "Mika Suryofakhri Rahwono",
     role: "Backend Developer",
-    image: "/assets/images/newtn-talents/developers/mika.webp",
+    linkedIn: "https://www.linkedin.com/in/mikasrahwono/",
   },
   {
-    name: "Aldrich",
+    name: "Christian Aldrich Darrien",
     role: "Backend Developer",
-    image: "/assets/images/newtn-talents/developers/aldrich.webp",
+    linkedIn: "https://www.linkedin.com/in/christianaldrichd/",
   },
   {
-    name: "Elian",
+    name: "Elian Richard",
     role: "Full-stack Developer",
-    image: "/assets/images/newtn-talents/developers/elian.webp",
+    linkedIn: "https://www.linkedin.com/in/elianrichard/",
   },
   {
-    name: "Tessy",
+    name: "Christopher Nathanael Tessy",
     role: "Frontend Developer",
-    image: "/assets/images/newtn-talents/developers/tessy.webp",
+    linkedIn: "https://www.linkedin.com/in/christophernathanaeltessy",
   },
   {
-    name: "Rama",
+    name: "Rama Eka Hartono",
     role: "Full-stack Developer",
-    image: "/assets/images/newtn-talents/developers/rama.webp",
+    linkedIn: "https://www.linkedin.com/in/ramaekah/",
   },
   {
-    name: "Bintang",
+    name: "Bintang Anandhiya",
     role: "Frontend Developer",
-    image: "/assets/images/newtn-talents/developers/bintang.webp",
+    linkedIn: "https://www.linkedin.com/in/bintanganandhiya/",
   },
 ];
