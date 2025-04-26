@@ -57,7 +57,7 @@ export default function ServiceCard() {
           <h1 className="mb-2 text-left text-3xl font-semibold text-primary">
             Development
           </h1>
-          <p className="mb-5 text-primary">
+          <p className="mb-5 text-lg text-primary">
             Crafting responsive, user-friendly websites and building intuitive,
             high-performance mobile apps for iOS and Android, tailored to your
             business needs.
@@ -75,7 +75,7 @@ export default function ServiceCard() {
           <h1 className="mb-2 text-left text-3xl font-semibold text-primary">
             Design
           </h1>
-          <p className="mb-5 text-primary">
+          <p className="mb-5 text-lg text-primary">
             Creating stunning app and web designs, strong brand identities, and
             high-quality 2D & 3D assets with engaging motion graphics, all
             driven by in-depth UX research.
