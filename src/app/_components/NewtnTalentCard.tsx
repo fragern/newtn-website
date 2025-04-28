@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Link from "next/link";
 import type { NewtnTalent } from "@/types/NewtnTalent";
 
 interface NewtnTalentCardProps {
@@ -7,19 +7,16 @@ interface NewtnTalentCardProps {
 
 const NewtnTalentCard: React.FC<NewtnTalentCardProps> = ({ talent }) => {
   return (
-    <div className="flex flex-none flex-col items-center">
-      <div className="relative aspect-[2/3] w-40 lg:w-52">
-        <Image
-          src={talent.image}
-          alt={`Picture of ${talent.name}`}
-          fill
-          className="object-fit h-full w-full"
-        />
+    <Link href={talent.linkedIn} target="_blank" className="w-full">
+      <div className="hover:bg-primary/5 mb-2 flex w-full flex-row items-center justify-between rounded-full border border-transparent px-4 py-2 transition-all duration-300 ease-in-out hover:border-primary hover:shadow-md">
+        <p className="text-3xl font-medium text-primary transition-colors duration-300">
+          {talent.name}
+        </p>
+        <p className="text-right text-2xl text-primary transition-colors duration-300">
+          {talent.role}
+        </p>
       </div>
-
-      <p className="mt-5 text-2xl font-semibold text-black">{talent.name}</p>
-      <p className="text-lg text-black">{talent.role}</p>
-    </div>
+    </Link>
   );
 };
 

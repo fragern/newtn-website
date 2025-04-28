@@ -14,7 +14,6 @@ import {
 import { webDevelopmentPortfolios } from "@/data/portfolio/web-development";
 import type { Portfolio } from "@/types/Portfolio";
 import type { PortfolioCategory } from "@/types/PortfolioCategory";
-import CardStack from "./containers/CardStack";
 
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] =
@@ -29,31 +28,24 @@ export default function Portfolio() {
 
   const selectedPortfolios = categoryMap[selectedCategory.slug] ?? [];
 
-  const handleScrollEnd = () => {
-    const currentIndex = PortfolioCategories.findIndex(
-      (cat) => cat.id === selectedCategory.id,
-    );
-    const nextIndex = (currentIndex + 1) % PortfolioCategories.length;
-    setSelectedCategory(PortfolioCategories[nextIndex] as PortfolioCategory);
-  };
-
   return (
     <>
       <div className="relative w-full">
         <div className="absolute -top-36 -z-10 h-[363px] w-screen lg:-top-20">
           <Image
-            src={"/assets/images/portfolio/top-portfolio.webp"}
+            src={"/assets/images/supergraphics/top-portfolio.svg"}
             fill
             alt="top-portfolio"
             className="top-0 object-contain"
             sizes="100vw"
           />
         </div>
-        <div className="relative z-20 flex flex-col justify-center gap-2 px-4 py-20 text-[#2F4157] lg:px-8 lg:pb-[180px] lg:pt-[126px]">
-          <h1 className="text-center text-2xl font-medium lg:text-4xl">
-            Where ideas come to life
+
+        <div className="relative z-20 mx-auto flex max-w-5xl flex-col items-start justify-center gap-2 px-4 pt-20 text-[#2F4157] lg:px-8 lg:pt-72">
+          <h1 className="mb-4 text-left text-2xl font-semibold lg:text-5xl">
+            Where Ideas Come to Life
           </h1>
-          <p className="text-center text-sm lg:text-xl">
+          <p className="text-left text-sm lg:text-2xl">
             Explore our portfolio, showcasing projects our member has
             contributed to. From sleek websites to immersive mobile apps and
             captivating designs, each reflects our passion for innovation and
@@ -61,16 +53,17 @@ export default function Portfolio() {
           </p>
         </div>
 
-        <div className="hidden w-screen justify-between pr-8 xl:flex">
-          <div className="flex w-[370px] flex-col gap-4">
+        <div className="flex flex-col items-center py-28">
+          {/* Top Category Bar */}
+          <div className="flex flex-wrap justify-center gap-6">
             {PortfolioCategories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category)}
-                className={`w-[247px] py-5 pl-8 text-left font-medium transition-all duration-500 ease-in-out ${
+                className={`text-lg font-medium transition-all duration-300 ease-in-out ${
                   selectedCategory.id === category.id
-                    ? "clip-path-trapezoid w-[370px] font-bold text-white"
-                    : ""
+                    ? "font-semibold text-primary"
+                    : "text-[#AAB9CC] hover:text-[#3B506B]"
                 }`}
               >
                 {category.name}
@@ -78,46 +71,46 @@ export default function Portfolio() {
             ))}
           </div>
 
-          <div className="mb-12 w-full">
-            <CardStack
-              portfolios={selectedPortfolios}
-              onScrollEnd={handleScrollEnd}
-            />
+          {/* Horizontal line */}
+          <div className="w-full max-w-5xl px-4">
+            <div className="h-[1px] w-full bg-secondary" />
           </div>
-        </div>
 
-        <div className="mb-12 block xl:hidden">
-          <div className="flex flex-col gap-10">
-            {PortfolioCategories.map((category) => (
-              <div key={category.id} className="flex flex-col gap-3">
-                <div className="clip-path-trapezoid w-fit px-4 py-1 text-white">
-                  <p className="w-[161px]">{category.name}</p>
+          {/* Portfolio Cards */}
+          <div className="mt-8 grid w-full max-w-5xl grid-cols-1 gap-8 px-4 md:grid-cols-2">
+            {selectedPortfolios.map((portfolio) => (
+              <Link
+                href={`/portfolio/${portfolio.category.slug}/${portfolio.id}`}
+                key={portfolio.id}
+                className="flex flex-col overflow-hidden rounded-xl border border-primary bg-white transition-all hover:shadow-xl"
+              >
+                <div className="relative aspect-[4/3] w-full bg-gray-200">
+                  <Image
+                    src={portfolio.showcaseImage2}
+                    alt={`${portfolio.title}'s image`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                    priority
+                  />
                 </div>
-
-                <div className="no-scrollbar flex items-center gap-4 self-stretch overflow-x-auto px-4 py-2">
-                  {allPortfolios
-                    .filter((portfolio) => portfolio.category === category)
-                    .map((portfolio) => (
-                      <Link
-                        href={`/portfolio/${portfolio.category.slug}/${portfolio.id}`}
-                        key={portfolio.id}
-                        className="flex flex-col justify-start gap-1 rounded-xl bg-white shadow-md"
+                <div className="p-4">
+                  <h1 className="text-xl font-semibold">{portfolio.title}</h1>
+                  <p className="mt-1 text-gray-600">
+                    {portfolio.short_description}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {portfolio.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="rounded-full border border-primary bg-white px-3 py-1 font-semibold text-primary"
                       >
-                        <div className="relative h-32 w-[189px] rounded-t-xl bg-[#D9D9D9]">
-                          <Image
-                            src={portfolio.coverImage}
-                            alt={`${portfolio.title}'s image`}
-                            fill
-                            className="h-full w-full rounded-t-xl object-cover"
-                          />
-                        </div>
-                        <p className="p-1 text-base font-medium">
-                          {portfolio.title}
-                        </p>
-                      </Link>
+                        {tag}
+                      </span>
                     ))}
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
