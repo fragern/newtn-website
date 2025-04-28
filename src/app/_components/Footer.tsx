@@ -45,7 +45,7 @@ const Footer = () => {
             </Link>
 
             <Link
-              href="mailto:your-email@example.com"
+              href="mailto:contactnewtn@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
             >
