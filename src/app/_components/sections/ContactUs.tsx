@@ -56,87 +56,90 @@ const ContactUs = () => {
   const captchaRef = useRef<HCaptcha>(null);
 
   return (
-    <section className="relative flex w-full flex-col gap-8 bg-secondary px-4 py-16 md:gap-16 md:px-10 md:py-32 lg:flex-row lg:items-center">
-      <div className="absolute bottom-0 right-0 h-[200px] w-[200px] md:h-[400px] md:w-[400px] lg:h-[549px] lg:w-[551px]">
-        <div className="relative h-full w-full">
-          <Image
-            src="/assets/images/squares-triangles-white-outline.svg"
-            alt="A triangle made out of outlines of squares and triangles"
-            fill
-            className="h-full w-full object-contain"
-          />
+    <section className="relative flex w-full items-start justify-center bg-secondary px-4">
+      <div className="flex w-full max-w-5xl flex-col gap-8 py-16 md:gap-16 md:py-32 lg:flex-row lg:items-center">
+        <div className="absolute bottom-0 right-0 h-[200px] w-[200px] md:h-[400px] md:w-[400px] lg:h-[549px] lg:w-[551px]">
+          <div className="relative h-full w-full">
+            <Image
+              src="/assets/images/squares-triangles-white-outline.svg"
+              alt="A triangle made out of outlines of squares and triangles"
+              fill
+              className="h-full w-full object-contain opacity-25"
+            />
+          </div>
         </div>
-      </div>
 
-      <div className="z-10 flex max-w-screen-sm flex-col gap-4">
-        <h1 className="text-2xl font-bold text-primary md:text-6xl">
-          LET&apos;S BRING YOUR IDEAS TO LIFE.
-        </h1>
-        <p className="max-w-[400px] text-base text-black md:text-2xl">
-          Tell us a bit about your project, and we&apos;ll get back to you soon!
-        </p>
-      </div>
+        <div className="z-10 flex max-w-screen-sm flex-col gap-2 md:gap-4">
+          <h1 className="text-4xl font-bold text-primary md:text-6xl">
+            LET&apos;S BRING YOUR IDEAS TO LIFE.
+          </h1>
+          <p className="max-w-[400px] text-lg text-black md:text-2xl">
+            Tell us a bit about your project, and we&apos;ll get back to you
+            soon!
+          </p>
+        </div>
 
-      <div className="z-10 flex flex-1 items-center justify-center">
-        <form
-          className="flex w-full flex-col gap-8 text-primary lg:max-w-screen-md"
-          onSubmit={handleSubmit(onSubmit)}
-        >
-          <div className="flex flex-col gap-8 lg:flex-row">
-            <div className="flex w-full flex-col gap-2">
-              <input
-                {...register("name", { required: "Name is required" })}
-                type="text"
-                placeholder="Your Name..."
-                className="rounded-2xl bg-background p-4 font-medium"
-              />
-              <ErrorMessage error={errors.name?.message} />
+        <div className="z-10 flex flex-1 items-center justify-center">
+          <form
+            className="flex w-full flex-col gap-8 text-primary lg:max-w-screen-md"
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <div className="flex flex-col gap-8 lg:flex-row">
+              <div className="flex w-full flex-col gap-2">
+                <input
+                  {...register("name", { required: "Name is required" })}
+                  type="text"
+                  placeholder="Your Name..."
+                  className="rounded-2xl bg-background p-4 text-sm font-medium md:text-base"
+                />
+                <ErrorMessage error={errors.name?.message} />
+              </div>
+              <div className="flex w-full flex-col gap-2">
+                <input
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+                      message: "Invalid email address",
+                    },
+                  })}
+                  type="email"
+                  placeholder="Your Email..."
+                  className="rounded-2xl bg-background p-4 text-sm font-medium md:text-base"
+                />
+                <ErrorMessage error={errors.email?.message} />
+              </div>
             </div>
             <div className="flex w-full flex-col gap-2">
-              <input
-                {...register("email", {
-                  required: "Email is required",
-                  pattern: {
-                    value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
-                    message: "Invalid email address",
-                  },
-                })}
-                type="email"
-                placeholder="Your Email..."
-                className="rounded-2xl bg-background p-4 font-medium"
+              <textarea
+                {...register("message", { required: "Message is required" })}
+                rows={5}
+                placeholder="Your Message..."
+                className="w-full resize-none rounded-2xl bg-background p-4 text-sm font-medium md:text-base"
+                required
               />
-              <ErrorMessage error={errors.email?.message} />
+              <ErrorMessage error={errors.message?.message} />
             </div>
-          </div>
-          <div className="flex w-full flex-col gap-2">
-            <textarea
-              {...register("message", { required: "Message is required" })}
-              rows={5}
-              placeholder="Your Message..."
-              className="w-full resize-none rounded-2xl bg-background p-4 text-sm font-medium md:text-base"
-              required
-            />
-            <ErrorMessage error={errors.message?.message} />
-          </div>
-          <div>
-            <HCaptcha
-              sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY ?? ""}
-              ref={captchaRef}
-              onVerify={onHCaptchaChange}
-              loadAsync
-            />
-            <ErrorMessage error={errors.captcha?.message} />
-          </div>
-          <div>
-            <button
-              type="submit"
-              className="rounded-full bg-primary px-4 py-2 text-base font-medium text-white hover:bg-white hover:text-primary md:px-8 md:py-4 md:text-xl"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "Sending..." : "Send Your Idea"}
-            </button>
-          </div>
-        </form>
+            <div>
+              <HCaptcha
+                sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY ?? ""}
+                ref={captchaRef}
+                onVerify={onHCaptchaChange}
+                loadAsync
+              />
+              <ErrorMessage error={errors.captcha?.message} />
+            </div>
+            <div>
+              <button
+                type="submit"
+                className="rounded-full bg-primary px-6 py-3 text-base font-medium text-white hover:bg-white hover:text-primary md:px-8 md:py-4 md:text-xl"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Send Your Idea"}
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
   );
