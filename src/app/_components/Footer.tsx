@@ -4,36 +4,57 @@ import ContactUs from "./sections/ContactUs";
 
 const Footer = () => {
   return (
-    <footer className="w-screen bg-primary text-white">
+    <footer className="flex w-full flex-col items-center justify-center bg-primary text-white">
       <ContactUs />
-      <div className="flex flex-col justify-between px-8 py-20 md:flex-row">
+
+      <div className="relative flex w-full max-w-5xl justify-center px-4 pb-32 pt-20 sm:justify-start sm:pb-20">
         <Image
-          src="/assets/logos/newtn/icon-text/white.svg"
+          src="/assets/logos/newtn/text/white.svg"
           alt="Snowflake"
           height={1000}
           width={1000}
-          className="h-auto w-[168px]"
+          className="absolute bottom-0 right-0 h-auto w-[400px] pl-8 sm:w-[500px] md:w-[600px]"
         />
-        <div className="mt-12 flex justify-between gap-44 md:mt-0 md:gap-56">
+
+        <div className="grid grid-cols-2 gap-16">
           <div className="flex flex-col gap-4">
+            <h5 className="mb-2 text-lg font-semibold">Menu</h5>
+
             <Link href="/">
-              <p className="underline hover:no-underline">Home</p>
+              <p className="hover:underline">Home</p>
             </Link>
+
             <Link href="/portfolio">
-              <p className="underline hover:no-underline">Portfolio</p>
+              <p className="hover:underline">Portfolio</p>
             </Link>
+
             <Link href="/about">
-              <p className="underline hover:no-underline">About Us</p>
+              <p className="hover:underline">About Us</p>
             </Link>
           </div>
+
           <div className="flex flex-col gap-4">
+            <h5 className="mb-2 text-lg font-semibold">Menu</h5>
+
             <Link
               href="https://instagram.com/newtn.id"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <p className="underline hover:no-underline">Instagram</p>
+              <p className="hover:underline">Instagram</p>
             </Link>
+
+            <Link
+              href="mailto:your-email@example.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className="hover:underline">Email</p>
+            </Link>
+          </div>
+
+          <div className="col-span-2">
+            <p className="text-center sm:text-start">© Newtn 2025</p>
           </div>
         </div>
       </div>
