@@ -6,9 +6,10 @@ export type Portfolio = {
   category: PortfolioCategory;
   title: string;
   description: string;
+  short_description: string;
   members: string;
   duration: string;
-  tags: string;
+  tags: string[];
   link: string;
   techStacksOrTools: string;
   frontend: TechTool[];

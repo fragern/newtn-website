@@ -46,7 +46,7 @@ export default function ServiceCard() {
       />
 
       <div className="flex flex-row gap-6">
-        <div className="rounded-3xl bg-white p-10 shadow-lg">
+        <div className="rounded-2xl border border-primary bg-white p-10">
           <Image
             src={"/assets/images/newtnDevelopment.svg"}
             alt="Newtn Development"
@@ -64,7 +64,7 @@ export default function ServiceCard() {
           </p>
           <div className="flex flex-wrap gap-2">{renderPills(development)}</div>
         </div>
-        <div className="rounded-xl bg-white p-10 shadow-lg">
+        <div className="rounded-2xl border border-primary bg-white p-10">
           <Image
             src={"/assets/images/newtnDesign.svg"}
             alt="Newtn Design"
