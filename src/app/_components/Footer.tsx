@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="flex w-full flex-col items-center justify-center bg-primary text-white">
       <ContactUs />
 
-      <div className="relative flex w-full max-w-5xl justify-center px-4 pb-32 pt-20 sm:justify-start sm:pb-20">
+      <div className="relative flex w-full max-w-5xl px-4 pb-32 pt-20 sm:pb-20">
         <Image
           src="/assets/logos/newtn/text/white.svg"
           alt="Snowflake"
@@ -54,7 +54,7 @@ const Footer = () => {
           </div>
 
           <div className="col-span-2">
-            <p className="text-center sm:text-start">© Newtn 2025</p>
+            <p>© Newtn 2025</p>
           </div>
         </div>
       </div>
