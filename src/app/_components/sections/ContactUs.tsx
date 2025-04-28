@@ -69,7 +69,7 @@ const ContactUs = () => {
           </div>
         </div>
 
-        <div className="z-10 flex max-w-screen-sm flex-col gap-2 md:gap-4">
+        <div className="z-10 flex max-w-screen-sm flex-col gap-4 md:gap-8">
           <h1 className="text-4xl font-bold text-primary md:text-6xl">
             LET&apos;S BRING YOUR IDEAS TO LIFE.
           </h1>
