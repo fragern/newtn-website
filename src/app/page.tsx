@@ -1,133 +1,221 @@
 "use client";
-import * as React from "react";
-import { useState, useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useAnimation } from "framer-motion";
-import { NewtnService } from "@/data/newtn-service";
-import { assets2D3DPortfolios } from "@/data/portfolio/2d-3d-assets";
-import { appDevelopmentPortfolios } from "@/data/portfolio/app-development";
-import { brandingPortfolios } from "@/data/portfolio/branding";
+import { allPortfolios } from "@/data/portfolio/all-portfolios";
 import {
   PortfolioCategories,
   WebDevelopment,
 } from "@/data/portfolio/portfolio-categories";
-import { webDevelopmentPortfolios } from "@/data/portfolio/web-development";
-import { type Portfolio } from "@/types/Portfolio";
-import { type PortfolioCategory } from "@/types/PortfolioCategory";
-import CardStack from "./portfolio/containers/CardStack";
-
-const text = "we turn ideas into reality.";
+import type { PortfolioCategory } from "@/types/PortfolioCategory";
+import ServiceCard from "./_components/ServiceCard";
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] =
-    React.useState<PortfolioCategory>(WebDevelopment);
+    useState<PortfolioCategory>(WebDevelopment);
 
-  const categoryMap: Record<string, Portfolio[]> = {
-    "web-development": webDevelopmentPortfolios,
-    "app-development": appDevelopmentPortfolios,
-    "2d-3d-assets": assets2D3DPortfolios,
-    branding: brandingPortfolios,
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleSelect = (category: PortfolioCategory) => {
+    setSelectedCategory(category);
+    setIsOpen(false);
   };
-
-  const selectedPortfolios = categoryMap[selectedCategory.slug] ?? [];
-
-  const handleScrollEnd = () => {
-    const currentIndex = PortfolioCategories.findIndex(
-      (cat) => cat.id === selectedCategory.id,
-    );
-    const nextIndex = (currentIndex + 1) % PortfolioCategories.length;
-    setSelectedCategory(PortfolioCategories[nextIndex] as PortfolioCategory);
-  };
-
-  const controls = useAnimation();
-  const { ref, inView } = useInView({ threshold: 0.5 });
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  useEffect(() => {
-    if (inView && !hasAnimated) {
-      controls.start("visible");
-      setHasAnimated(true);
-    }
-  }, [inView, controls, hasAnimated]);
 
   return (
-    <>
-      <main className="lg:pt-10">
-        <div className="min-h-full">
-          <div className="flex justify-center px-12 md:justify-between">
-            <div className="z-10 flex flex-col gap-y-20 pt-16">
-              <div className="relative h-[56px] md:h-[138px] md:w-[692px]">
-                <Image
-                  alt="newtn-text"
-                  src={"/assets/logos/newtn/text/text-logo.webp"}
-                  fill
-                  className="object-contain"
-                  sizes="100vw"
-                />
-              </div>
+    <main className="overflow-x-clip">
+      <section className="relative flex w-full justify-center px-4 pb-64 pt-32">
+        <div className="absolute bottom-0 w-full max-w-7xl">
+          <div className="relative w-full scale-75 sm:scale-[.8] md:scale-[.85] lg:scale-90 xl:scale-100">
+            <svg
+              className="absolute -bottom-56 left-0 h-[500px] -scale-x-100 scale-y-75"
+              width="258"
+              height="742"
+              viewBox="0 0 258 742"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 270V599L243 742L243.5 0.5L0 270Z"
+                fill="#829EBF"
+                fillOpacity="0.8"
+              />
+              <path
+                d="M257.5 732.5L243 742L243.5 0.5L257.5 18.5V732.5Z"
+                fill="#73879F"
+                fillOpacity="0.8"
+              />
+            </svg>
 
-              <div className="flex flex-col gap-0 text-center text-2xl font-bold text-[#2F4157] text-stroke-1 text-stroke-white md:gap-2 md:text-left md:text-5xl">
-                <p>Versatility.</p>
-                <p>Innovation.</p>
-                <p>Fresh Perspective.</p>
-              </div>
-            </div>
+            <svg
+              className="absolute -bottom-56 left-32 h-[500px] -scale-x-100 scale-y-90"
+              width="258"
+              height="742"
+              viewBox="0 0 258 742"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 270V599L243 742L243.5 0.5L0 270Z"
+                fill="#829EBF"
+                fillOpacity="0.8"
+              />
+              <path
+                d="M257.5 732.5L243 742L243.5 0.5L257.5 18.5V732.5Z"
+                fill="#73879F"
+                fillOpacity="0.8"
+              />
+            </svg>
 
-            <div className="absolute right-0 z-0 pt-20 md:relative md:pt-0">
-              <div className="flex flex-col items-end gap-4">
-                <div className="clip-path-triangle h-[67px] w-[67px] bg-primary transition-all duration-300 hover:border hover:border-primary hover:bg-white md:h-[156px] md:w-[156px]"></div>
-                <div className="flex gap-4">
-                  <div className="clip-path-triangle h-[67px] w-[67px] bg-primary transition-all duration-300 hover:border hover:border-primary hover:bg-white md:h-[156px] md:w-[156px]"></div>
-                  <div className="h-[67px] w-[67px] bg-primary transition-all duration-300 hover:border hover:border-primary hover:bg-white md:h-[156px] md:w-[156px]"></div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="clip-path-triangle h-[67px] w-[67px] bg-primary transition-all duration-300 hover:border hover:border-primary hover:bg-white md:h-[156px] md:w-[156px]"></div>
-                  <div className="h-[67px] w-[67px] bg-primary transition-all duration-300 hover:border hover:border-primary hover:bg-white md:h-[156px] md:w-[156px]"></div>
-                  <div className="clip-path-triangle h-[67px] w-[67px] bg-primary transition-all duration-300 hover:border hover:border-primary hover:bg-white md:h-[156px] md:w-[156px]"></div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="clip-path-triangle h-[67px] w-[67px] bg-primary transition-all duration-300 hover:border hover:border-primary hover:bg-white md:h-[156px] md:w-[156px]"></div>
-                  <div className="h-[67px] w-[67px] bg-primary transition-all duration-300 hover:border hover:border-primary hover:bg-white md:h-[156px] md:w-[156px]"></div>
-                  <div className="clip-path-triangle h-[67px] w-[67px] bg-primary transition-all duration-300 hover:border hover:border-primary hover:bg-white md:h-[156px] md:w-[156px]"></div>
-                  <div className="h-[67px] w-[67px] bg-primary transition-all duration-300 hover:border hover:border-primary hover:bg-white md:h-[156px] md:w-[156px]"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+            <svg
+              className="absolute -bottom-56 left-64 h-[500px] -scale-x-100"
+              width="258"
+              height="742"
+              viewBox="0 0 258 742"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 270V599L243 742L243.5 0.5L0 270Z"
+                fill="#829EBF"
+                fillOpacity="0.8"
+              />
+              <path
+                d="M257.5 732.5L243 742L243.5 0.5L257.5 18.5V732.5Z"
+                fill="#73879F"
+                fillOpacity="0.8"
+              />
+            </svg>
 
-          <div ref={ref} className="px-2 pb-14 pt-[150px] md:px-8 md:pt-24">
-            <h1 className="text-center text-base font-normal text-[#2F4157] md:text-5xl">
-              <b>Newtn</b> is a software studio uniting digital talent. <br />
-              Rooted in curiosity and innovation,{" "}
-              <motion.span>
-                {text.split(" ").map((word, i) => (
-                  <span key={i} className="mr-2 underline">
-                    {word.split("").map((letter, j) => (
-                      <motion.span
-                        key={j}
-                        initial={{ opacity: 0 }}
-                        animate={controls}
-                        variants={{ visible: { opacity: 1 } }}
-                        transition={{ delay: i * 0.5 + j * 0.1 }}
-                      >
-                        {letter}
-                      </motion.span>
-                    ))}
-                  </span>
-                ))}
-              </motion.span>
-            </h1>
+            <svg
+              className="absolute -bottom-56 right-0 h-[500px] scale-y-75"
+              width="258"
+              height="742"
+              viewBox="0 0 258 742"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 270V599L243 742L243.5 0.5L0 270Z"
+                fill="#829EBF"
+                fillOpacity="0.8"
+              />
+              <path
+                d="M257.5 732.5L243 742L243.5 0.5L257.5 18.5V732.5Z"
+                fill="#73879F"
+                fillOpacity="0.8"
+              />
+            </svg>
+
+            <svg
+              className="absolute -bottom-56 right-32 h-[500px] scale-y-90"
+              width="258"
+              height="742"
+              viewBox="0 0 258 742"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 270V599L243 742L243.5 0.5L0 270Z"
+                fill="#829EBF"
+                fillOpacity="0.8"
+              />
+              <path
+                d="M257.5 732.5L243 742L243.5 0.5L257.5 18.5V732.5Z"
+                fill="#73879F"
+                fillOpacity="0.8"
+              />
+            </svg>
+
+            <svg
+              className="absolute -bottom-56 right-64 h-[500px]"
+              width="258"
+              height="742"
+              viewBox="0 0 258 742"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 270V599L243 742L243.5 0.5L0 270Z"
+                fill="#829EBF"
+                fillOpacity="0.8"
+              />
+              <path
+                d="M257.5 732.5L243 742L243.5 0.5L257.5 18.5V732.5Z"
+                fill="#73879F"
+                fillOpacity="0.8"
+              />
+            </svg>
           </div>
         </div>
 
-        <div className="relative flex flex-col gap-10 bg-[#C7D9E5] px-8 py-10 text-[#2F4157] md:mt-[120px] md:gap-20 md:py-20">
-          <div className="flex flex-col justify-center gap-[10px]">
-            <h1 className="text-center text-2xl font-semibold md:text-[30px]">
+        <div className="flex w-full max-w-5xl flex-col items-center gap-16">
+          <div className="relative flex flex-col gap-4 overflow-visible">
+            <div className="absolute inset-0 -z-10 m-auto mt-1 size-96 rounded-full bg-[#C7D9E5] blur-[128px]"></div>
+
+            <h1 className="mx-auto max-w-3xl text-center text-5xl font-semibold text-primary">
+              Your end-to-end tech partner with a product-first mindset
+            </h1>
+
+            <p className="mx-auto max-w-4xl text-center text-2xl font-light text-primary">
+              From idea to launch, Newtn delivers full-cycle product development
+              — combining sharp design, agile engineering, and reliable
+              deployment to turn bold ideas into impactful digital products.
+            </p>
+          </div>
+
+          <div className="flex items-center justify-center gap-4">
+            <a
+              href="mailto:contactnewtn@gmail.com"
+              className="rounded-full border border-primary bg-primary px-6 py-2 text-xl font-medium text-white hover:bg-white hover:text-primary"
+            >
+              Let&apos;s Talk
+            </a>
+            <Link
+              href="/portfolio"
+              passHref
+              className="rounded-full border border-primary bg-white px-6 py-2 text-xl font-medium text-primary hover:bg-primary hover:text-white"
+            >
+              Explore our work
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="flex w-full justify-center bg-white/50 px-4 pt-32 backdrop-blur-sm">
+        <div className="relative flex w-full max-w-5xl flex-col items-center gap-16">
+          <div className="pointer-events-none absolute h-full w-[64rem] self-center">
+            <div className="relative h-full w-full">
+              <div className="absolute -bottom-16 -right-32 h-[500px] w-[500px] rotate-[25deg]">
+                <div className="relative h-full w-full">
+                  <Image
+                    src="/assets/images/squares-triangles-lightblue-outline.svg"
+                    alt="A triangle made out of outlines of squares and triangles"
+                    fill
+                    className="h-full w-full object-contain opacity-50"
+                  />
+                </div>
+              </div>
+
+              <div className="absolute -bottom-32 -left-48 h-[400px] w-[400px] rotate-[190deg]">
+                <div className="relative h-full w-full">
+                  <Image
+                    src="/assets/images/squares-triangles-lightblue-outline.svg"
+                    alt="A triangle made out of outlines of squares and triangles"
+                    fill
+                    className="h-full w-full object-contain opacity-50"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex w-full max-w-4xl flex-col gap-4">
+            <h1 className="text-center text-4xl font-semibold text-primary">
               End-to-End Services, Delivered Effortlessly
             </h1>
-            <p className="text-center text-sm md:text-lg">
+
+            <p className="text-center text-xl font-light text-primary">
               We specialize in comprehensive digital solutions, delivering
               end-to-end services that encompass asset creation, UI/UX design,
               development, and seamless deployment. Our expertise ensures a
@@ -136,118 +224,141 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="relative flex flex-col gap-8 md:flex-row">
-            {NewtnService.map((service, index) => (
-              <div
-                className="relative z-10 rounded-[20px] bg-white shadow-lg"
-                key={index}
-              >
-                <div className="relative h-auto w-full">
+          <ServiceCard />
+        </div>
+      </section>
+
+      <section className="flex w-full justify-center px-4 py-32">
+        <div className="relative flex w-full max-w-5xl flex-col gap-8">
+          <div className="pointer-events-none absolute h-full w-[64rem] self-center">
+            <div className="relative h-full w-full">
+              <div className="absolute -right-48 bottom-0 -z-10 h-[400px] w-[400px] rotate-[170deg]">
+                <div className="relative h-full w-full">
                   <Image
-                    src={service.image}
-                    width={500}
-                    height={0}
-                    alt={service.image}
-                    className="h-auto w-full object-contain object-top"
+                    src="/assets/images/squares-triangles-lightblue-outline.svg"
+                    alt="A triangle made out of outlines of squares and triangles"
+                    fill
+                    className="h-full w-full object-contain opacity-50"
                   />
                 </div>
-                <div className="px-6 pt-5">
-                  <h2 className="text-center text-2xl font-semibold text-black md:text-3xl">
-                    {service.title}
-                  </h2>
-                  <p className="px-0 pt-2 text-center text-sm text-[#515151] md:px-6 md:text-base">
-                    {service.description}
-                  </p>
-                  <div className="mb-8 mt-10 flex flex-wrap justify-center gap-2 px-0 md:gap-5 md:px-9">
-                    {service.tools.map((tools, index) => (
-                      <div
-                        className="rounded-full bg-teal px-3 py-1 text-sm font-semibold text-white md:px-5 md:py-2"
-                        key={index}
-                      >
-                        {tools}
-                      </div>
-                    ))}
-                  </div>
+              </div>
+
+              <div className="absolute -left-24 bottom-0 -z-10 h-[350px] w-[350px] rotate-[110deg]">
+                <div className="relative h-full w-full">
+                  <Image
+                    src="/assets/images/squares-triangles-lightblue-outline.svg"
+                    alt="A triangle made out of outlines of squares and triangles"
+                    fill
+                    className="h-full w-full object-contain opacity-50"
+                  />
                 </div>
               </div>
-            ))}
-
-            <Image
-              alt="bottom-left"
-              src={"/assets/images/home/bottom-left.svg"}
-              width={300}
-              height={300}
-              className="absolute -left-8 bottom-[-40px] z-0 hidden md:block lg:w-[300px]"
-            />
-            <Image
-              alt="bottom-right"
-              src={"/assets/images/home/bottom-right.svg"}
-              width={300}
-              height={300}
-              className="absolute -right-8 bottom-[-40px] z-0 hidden md:block lg:w-[300px]"
-            />
+            </div>
           </div>
-        </div>
 
-        <div className="relative pt-8">
-          <Image
-            alt="top-left"
-            src={"/assets/images/home/top-left.svg"}
-            width={300}
-            height={300}
-            className="absolute left-0 top-0 -z-10 hidden md:block lg:w-[300px]"
-          />
+          <div className="flex w-full max-w-3xl flex-col gap-4">
+            <h1 className="text-5xl font-bold text-primary">
+              Newtn&apos;s Projects
+            </h1>
 
-          <h1 className="relative z-10 flex justify-center text-center text-xl font-semibold text-[#2F4157] md:text-3xl">
-            Selected Projects
-          </h1>
+            <span
+              className="relative flex w-fit cursor-pointer items-center gap-3"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <p className="text-xl text-primary">{selectedCategory.name}</p>
 
-          <div className="relative z-10 flex flex-wrap items-center justify-center gap-4 px-3 pt-6">
-            {PortfolioCategories.map((category, index) => (
-              <button
-                key={index}
-                onClick={() => setSelectedCategory(category)}
-                className={`flex items-center gap-2 text-sm text-[#2F4157] transition-all duration-500 ease-in-out md:text-base ${
-                  selectedCategory.id === category.id
-                    ? "font-semibold text-[#2F4157]"
-                    : "opacity-50"
-                }`}
+              <svg
+                className={`size-2.5 text-primary transition-transform ${isOpen ? "rotate-90" : ""}`}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 384 512"
+                fill="currentColor"
               >
-                <div
-                  className={`h-5 w-5 rounded-full bg-primary ${
-                    selectedCategory.id === category.id
-                      ? "bg-primary"
-                      : "opacity-50"
-                  }`}
-                ></div>
-                {category.name}
-              </button>
-            ))}
+                <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z" />
+              </svg>
+
+              {isOpen && (
+                <div className="absolute left-0 top-8 z-10 w-48 rounded-sm border border-primary bg-white">
+                  {PortfolioCategories.map((category) => (
+                    <div
+                      key={category.id}
+                      onClick={() => handleSelect(category)}
+                      className={`cursor-pointer px-4 py-2 hover:bg-primary hover:text-white ${
+                        selectedCategory.id === category.id
+                          ? "bg-primary text-white"
+                          : ""
+                      }`}
+                    >
+                      {category.name}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </span>
           </div>
 
-          <div className="relative z-10 w-full pt-10">
-            <CardStack
-              portfolios={selectedPortfolios}
-              onScrollEnd={handleScrollEnd}
-            />
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            {allPortfolios
+              .filter((e) => e.category == selectedCategory)
+              .slice(0, 2)
+              .map((portfolio) => (
+                <Link
+                  href={`/portfolio/${portfolio.category.slug}/${portfolio.id}`}
+                  key={portfolio.id}
+                  className="flex flex-col overflow-hidden rounded-xl border border-primary bg-white transition-all hover:shadow-xl"
+                >
+                  <div className="relative aspect-[4/3] w-full bg-gray-200">
+                    <Image
+                      src={portfolio.showcaseImage2}
+                      alt={`${portfolio.title}'s image`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h1 className="text-xl font-semibold">{portfolio.title}</h1>
+                    <p className="mt-1 text-gray-600">
+                      {portfolio.short_description}
+                    </p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {portfolio.tags.map((tag, index) => (
+                        <span
+                          key={index}
+                          className="rounded-full border border-primary bg-white px-3 py-1 font-semibold text-primary"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </Link>
+              ))}
           </div>
 
           <Link
-            href={"/portfolio"}
-            className="relative z-10 mx-4 mb-20 mt-5 flex w-[205px] justify-center rounded-full bg-primary px-6 py-3.5 text-center text-white opacity-60 lg:mx-auto"
+            href="/portfolio"
+            className="flex items-center gap-2 self-center border-b border-transparent hover:border-primary"
           >
-            Load more project
-          </Link>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+              className="h-6 w-6"
+            >
+              <path
+                fillRule="evenodd"
+                d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5"
+              />
+            </svg>
 
-          <Image
-            alt="bottom-right-portfolio"
-            src={"/assets/images/home/bottom-right-portfolio.svg"}
-            width={300}
-            height={300}
-            className="absolute bottom-0 right-0 -z-10 hidden md:block lg:w-[300px]"
-          />
+            <span className="flex gap-1">
+              <p className="text-xl text-primary">See all work</p>
+              <p className="text-sm">({allPortfolios.length})</p>
+            </span>
+          </Link>
         </div>
-      </main>
-    </>
+      </section>
+    </main>
   );
 }

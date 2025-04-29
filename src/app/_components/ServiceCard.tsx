@@ -30,7 +30,7 @@ export default function ServiceCard() {
 
   return (
     <div className="relative max-w-5xl">
-      <Image
+      {/* <Image
         src="/assets/images/supergraphics/BehindOurService.svg"
         alt="Behind Our Service"
         width={400}
@@ -43,7 +43,7 @@ export default function ServiceCard() {
         width={400}
         height={400}
         className="pointer-events-none absolute -top-24 right-0 -z-10 select-none"
-      />
+      /> */}
 
       <div className="flex flex-row gap-6">
         <div className="rounded-2xl border border-primary bg-white p-10">

@@ -4,10 +4,21 @@ import ContactUs from "./sections/ContactUs";
 
 const Footer = () => {
   return (
-    <footer className="flex w-full flex-col items-center justify-center bg-primary text-white">
+    <footer className="flex w-full flex-col items-center justify-center overflow-clip bg-primary text-white">
       <ContactUs />
 
       <div className="relative flex w-full max-w-5xl px-4 pb-32 pt-20 sm:pb-20">
+        <div className="pointer-events-none absolute -bottom-40 left-16 h-[400px] w-[400px] rotate-[15deg] md:left-32">
+          <div className="relative h-full w-full">
+            <Image
+              src="/assets/images/squares-triangles-white-outline.svg"
+              alt="A triangle made out of outlines of squares and triangles"
+              fill
+              className="h-full w-full object-contain opacity-20"
+            />
+          </div>
+        </div>
+
         <Image
           src="/assets/logos/newtn/text/white.svg"
           alt="Snowflake"
