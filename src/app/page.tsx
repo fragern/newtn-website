@@ -1,60 +1,31 @@
 "use client";
-import * as React from "react";
-import { useState, useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useAnimation } from "framer-motion";
-import { NewtnService } from "@/data/newtn-service";
-import { assets2D3DPortfolios } from "@/data/portfolio/2d-3d-assets";
 import { allPortfolios } from "@/data/portfolio/all-portfolios";
-import { appDevelopmentPortfolios } from "@/data/portfolio/app-development";
-import { brandingPortfolios } from "@/data/portfolio/branding";
 import {
   PortfolioCategories,
   WebDevelopment,
 } from "@/data/portfolio/portfolio-categories";
-import { webDevelopmentPortfolios } from "@/data/portfolio/web-development";
-import { type Portfolio } from "@/types/Portfolio";
-import { type PortfolioCategory } from "@/types/PortfolioCategory";
+import type { PortfolioCategory } from "@/types/PortfolioCategory";
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] =
-    React.useState<PortfolioCategory>(WebDevelopment);
+    useState<PortfolioCategory>(WebDevelopment);
 
-  const categoryMap: Record<string, Portfolio[]> = {
-    "web-development": webDevelopmentPortfolios,
-    "app-development": appDevelopmentPortfolios,
-    "2d-3d-assets": assets2D3DPortfolios,
-    branding: brandingPortfolios,
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleSelect = (category: PortfolioCategory) => {
+    setSelectedCategory(category);
+    setIsOpen(false);
   };
-
-  const selectedPortfolios = categoryMap[selectedCategory.slug] ?? [];
-
-  const handleScrollEnd = () => {
-    const currentIndex = PortfolioCategories.findIndex(
-      (cat) => cat.id === selectedCategory.id,
-    );
-    const nextIndex = (currentIndex + 1) % PortfolioCategories.length;
-    setSelectedCategory(PortfolioCategories[nextIndex] as PortfolioCategory);
-  };
-
-  const controls = useAnimation();
-  const { ref, inView } = useInView({ threshold: 0.5 });
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  useEffect(() => {
-    if (inView && !hasAnimated) {
-      controls.start("visible");
-      setHasAnimated(true);
-    }
-  }, [inView, controls, hasAnimated]);
 
   return (
     <main className="overflow-x-clip">
       <section className="relative flex w-full justify-center px-4 pb-64 pt-32">
         <div className="absolute bottom-0 w-full max-w-7xl">
-          <div className="relative w-full">
+          <div className="relative w-full scale-75 sm:scale-[.8] md:scale-[.85] lg:scale-90 xl:scale-100">
             <svg
               className="absolute -bottom-56 left-0 h-[500px] -scale-x-100 scale-y-75"
               width="258"
@@ -406,55 +377,79 @@ export default function Home() {
               Newtn&apos;s Projects
             </h1>
 
-            <span className="flex items-center gap-3">
-              <p className="text-xl text-primary">Web Development</p>
+            <span
+              className="relative flex w-fit cursor-pointer items-center gap-3"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <p className="text-xl text-primary">{selectedCategory.name}</p>
 
               <svg
-                className="size-2.5 text-primary"
+                className={`size-2.5 text-primary transition-transform ${isOpen ? "rotate-90" : ""}`}
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 384 512"
                 fill="currentColor"
               >
                 <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z" />
               </svg>
+
+              {isOpen && (
+                <div className="absolute left-0 top-8 z-10 w-48 rounded-sm border border-primary bg-white">
+                  {PortfolioCategories.map((category) => (
+                    <div
+                      key={category.id}
+                      onClick={() => handleSelect(category)}
+                      className={`cursor-pointer px-4 py-2 hover:bg-primary hover:text-white ${
+                        selectedCategory.id === category.id
+                          ? "bg-primary text-white"
+                          : ""
+                      }`}
+                    >
+                      {category.name}
+                    </div>
+                  ))}
+                </div>
+              )}
             </span>
           </div>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-            {selectedPortfolios.slice(0, 2).map((portfolio) => (
-              <Link
-                href={`/portfolio/${portfolio.category.slug}/${portfolio.id}`}
-                key={portfolio.id}
-                className="flex flex-col overflow-hidden rounded-xl border border-primary bg-white transition-all hover:shadow-xl"
-              >
-                <div className="relative aspect-[4/3] w-full bg-gray-200">
-                  <Image
-                    src={portfolio.showcaseImage2}
-                    alt={`${portfolio.title}'s image`}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-                <div className="p-4">
-                  <h1 className="text-xl font-semibold">{portfolio.title}</h1>
-                  <p className="mt-1 text-gray-600">
-                    {portfolio.short_description}
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {portfolio.tags.map((tag, index) => (
-                      <span
-                        key={index}
-                        className="rounded-full border border-primary bg-white px-3 py-1 font-semibold text-primary"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+            {allPortfolios
+              .filter((e) => e.category == selectedCategory)
+              .slice(0, 2)
+              .map((portfolio) => (
+                <Link
+                  href={`/portfolio/${portfolio.category.slug}/${portfolio.id}`}
+                  key={portfolio.id}
+                  className="flex flex-col overflow-hidden rounded-xl border border-primary bg-white transition-all hover:shadow-xl"
+                >
+                  <div className="relative aspect-[4/3] w-full bg-gray-200">
+                    <Image
+                      src={portfolio.showcaseImage2}
+                      alt={`${portfolio.title}'s image`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover"
+                      priority
+                    />
                   </div>
-                </div>
-              </Link>
-            ))}
+                  <div className="p-4">
+                    <h1 className="text-xl font-semibold">{portfolio.title}</h1>
+                    <p className="mt-1 text-gray-600">
+                      {portfolio.short_description}
+                    </p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {portfolio.tags.map((tag, index) => (
+                        <span
+                          key={index}
+                          className="rounded-full border border-primary bg-white px-3 py-1 font-semibold text-primary"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </Link>
+              ))}
           </div>
 
           <Link

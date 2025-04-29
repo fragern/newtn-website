@@ -13,10 +13,9 @@ const OPTIONS: EmblaOptionsType = { loop: true };
 export default async function Page({
   params,
 }: {
-  params: { category: string; portfolioId: string };
+  params: Promise<{ category: string; portfolioId: string }>;
 }) {
-  const portfolioId = (await params).portfolioId;
-  const category = (await params).category;
+  const { category, portfolioId } = await params;
 
   const portfolio = allPortfolios.find(
     (p: Portfolio) =>
