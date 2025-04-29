@@ -195,14 +195,14 @@ export default function Home() {
           <div className="flex items-center justify-center gap-4">
             <button
               type="submit"
-              className="rounded-full border border-primary bg-primary px-6 py-2 text-xl font-medium text-white transition-all hover:bg-white hover:text-primary"
+              className="rounded-full border border-primary bg-primary px-6 py-2 text-xl font-medium text-white hover:bg-white hover:text-primary"
             >
               Let&apos;s Talk
             </button>
 
             <button
               type="submit"
-              className="rounded-full border border-primary bg-white px-6 py-2 text-xl font-medium text-primary transition-all hover:bg-primary hover:text-white"
+              className="rounded-full border border-primary bg-white px-6 py-2 text-xl font-medium text-primary hover:bg-primary hover:text-white"
             >
               Explore our work
             </button>
@@ -212,25 +212,29 @@ export default function Home() {
 
       <section className="flex w-full justify-center bg-white/50 px-4 pt-32 backdrop-blur-sm">
         <div className="relative flex w-full max-w-5xl flex-col items-center gap-16">
-          <div className="absolute -bottom-16 -right-32 h-[500px] w-[500px] rotate-[25deg]">
+          <div className="pointer-events-none absolute h-full w-[64rem] self-center">
             <div className="relative h-full w-full">
-              <Image
-                src="/assets/images/squares-triangles-lightblue-outline.svg"
-                alt="A triangle made out of outlines of squares and triangles"
-                fill
-                className="h-full w-full object-contain opacity-50"
-              />
-            </div>
-          </div>
+              <div className="absolute -bottom-16 -right-32 h-[500px] w-[500px] rotate-[25deg]">
+                <div className="relative h-full w-full">
+                  <Image
+                    src="/assets/images/squares-triangles-lightblue-outline.svg"
+                    alt="A triangle made out of outlines of squares and triangles"
+                    fill
+                    className="h-full w-full object-contain opacity-50"
+                  />
+                </div>
+              </div>
 
-          <div className="absolute -bottom-32 -left-48 h-[400px] w-[400px] rotate-[190deg]">
-            <div className="relative h-full w-full">
-              <Image
-                src="/assets/images/squares-triangles-lightblue-outline.svg"
-                alt="A triangle made out of outlines of squares and triangles"
-                fill
-                className="h-full w-full object-contain opacity-50"
-              />
+              <div className="absolute -bottom-32 -left-48 h-[400px] w-[400px] rotate-[190deg]">
+                <div className="relative h-full w-full">
+                  <Image
+                    src="/assets/images/squares-triangles-lightblue-outline.svg"
+                    alt="A triangle made out of outlines of squares and triangles"
+                    fill
+                    className="h-full w-full object-contain opacity-50"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
@@ -371,25 +375,29 @@ export default function Home() {
 
       <section className="flex w-full justify-center px-4 py-32">
         <div className="relative flex w-full max-w-5xl flex-col gap-8">
-          <div className="absolute -right-48 bottom-0 -z-10 h-[400px] w-[400px] rotate-[170deg]">
+          <div className="pointer-events-none absolute h-full w-[64rem] self-center">
             <div className="relative h-full w-full">
-              <Image
-                src="/assets/images/squares-triangles-lightblue-outline.svg"
-                alt="A triangle made out of outlines of squares and triangles"
-                fill
-                className="h-full w-full object-contain opacity-50"
-              />
-            </div>
-          </div>
+              <div className="absolute -right-48 bottom-0 -z-10 h-[400px] w-[400px] rotate-[170deg]">
+                <div className="relative h-full w-full">
+                  <Image
+                    src="/assets/images/squares-triangles-lightblue-outline.svg"
+                    alt="A triangle made out of outlines of squares and triangles"
+                    fill
+                    className="h-full w-full object-contain opacity-50"
+                  />
+                </div>
+              </div>
 
-          <div className="absolute -left-24 bottom-0 -z-10 h-[350px] w-[350px] rotate-[110deg]">
-            <div className="relative h-full w-full">
-              <Image
-                src="/assets/images/squares-triangles-lightblue-outline.svg"
-                alt="A triangle made out of outlines of squares and triangles"
-                fill
-                className="h-full w-full object-contain opacity-50"
-              />
+              <div className="absolute -left-24 bottom-0 -z-10 h-[350px] w-[350px] rotate-[110deg]">
+                <div className="relative h-full w-full">
+                  <Image
+                    src="/assets/images/squares-triangles-lightblue-outline.svg"
+                    alt="A triangle made out of outlines of squares and triangles"
+                    fill
+                    className="h-full w-full object-contain opacity-50"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
@@ -398,7 +406,18 @@ export default function Home() {
               Newtn&apos;s Projects
             </h1>
 
-            <p className="text-xl text-primary">Web Development</p>
+            <span className="flex items-center gap-3">
+              <p className="text-xl text-primary">Web Development</p>
+
+              <svg
+                className="size-2.5 text-primary"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 384 512"
+                fill="currentColor"
+              >
+                <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z" />
+              </svg>
+            </span>
           </div>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
