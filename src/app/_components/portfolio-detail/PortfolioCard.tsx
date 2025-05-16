@@ -8,31 +8,35 @@ interface PortfolioCardProps {
 
 const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
   return (
-    <div className="flex flex-col gap-8">
-      <div className="flex flex-col gap-4">
-        <div>
-          <h2 className="line-clamp-1 text-xl font-medium sm:text-2xl">
-            {portfolio.title}
-          </h2>
-        </div>
-
-        <div className="relative h-36 w-full sm:h-40 md:h-44 lg:h-48 xl:h-52">
-          <Image
-            src={portfolio.coverImage}
-            alt={`${portfolio.title}'s image`}
-            fill
-            className="h-full w-full rounded-xl object-cover"
-          />
+    <Link
+      href={`/portfolio/${portfolio.category.slug}/${portfolio.id}`}
+      className="flex flex-col overflow-hidden rounded-xl border border-primary bg-white transition-all hover:shadow-xl"
+    >
+      <div className="relative aspect-[4/3] w-full bg-gray-200">
+        <Image
+          src={portfolio.showcaseImage2}
+          alt={`${portfolio.title}'s image`}
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover"
+          priority
+        />
+      </div>
+      <div className="p-4">
+        <h1 className="text-xl font-semibold">{portfolio.title}</h1>
+        <p className="mt-1 text-gray-600">{portfolio.short_description}</p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {portfolio.tags.map((tag, index) => (
+            <span
+              key={index}
+              className="rounded-full border border-primary bg-white px-3 py-1 font-semibold text-primary"
+            >
+              {tag}
+            </span>
+          ))}
         </div>
       </div>
-
-      <Link
-        href={`/portfolio/${portfolio.category.slug}/${portfolio.id}`}
-        className="mt-2 w-fit rounded-full bg-primary-60 px-4 py-2 text-sm font-medium text-white sm:mt-2.5 md:mt-3 lg:mt-3.5 xl:mt-4"
-      >
-        View Project Detail
-      </Link>
-    </div>
+    </Link>
   );
 };
 
