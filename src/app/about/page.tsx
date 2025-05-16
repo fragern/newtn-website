@@ -45,14 +45,14 @@ export default function About() {
         </div>
       </section>
 
-      <section className="flex max-w-5xl flex-col gap-8 py-32 lg:gap-8 lg:pt-48">
-        <h1 className="text-left text-3xl font-semibold text-primary">
+      <section className="flex max-w-5xl flex-col gap-8 px-4 py-32 sm:px-0 lg:gap-8 lg:pt-48">
+        <h1 className="text-center text-3xl font-semibold text-primary sm:text-left">
           Our Service
         </h1>
         <ServiceCard />
       </section>
 
-      <section className="flex w-full max-w-5xl flex-col pb-8">
+      <section className="flex w-full max-w-5xl flex-col px-4 pb-8 sm:px-0">
         <h1 className="mb-8 text-left text-3xl font-semibold text-primary">
           Our Talents
         </h1>

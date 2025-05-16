@@ -51,7 +51,7 @@ export default async function Page({
         </p>
       </section>
 
-      <section className="grid grid-cols-1 gap-8 px-10 pt-16 lg:grid-cols-3 lg:gap-16 lg:pt-32">
+      <section className="grid grid-cols-1 gap-8 px-4 pt-16 sm:px-10 lg:grid-cols-3 lg:gap-16 lg:pt-32">
         <div className="relative col-span-1 h-20 sm:h-24 md:h-28 lg:h-[119px]">
           <Image
             src={portfolio.logo}
@@ -77,7 +77,7 @@ export default async function Page({
 
             <div className="flex flex-1 flex-col gap-2">
               <h2 className="font-sans font-semibold">Tags</h2>
-              <p>{portfolio.tags}</p>
+              <p>{portfolio.tags[0]}</p>
             </div>
 
             <div className="flex flex-1 flex-col items-center gap-2">
@@ -89,7 +89,7 @@ export default async function Page({
                 rel="noopener noreferrer"
               >
                 <button className="w-full rounded-full bg-primary py-1 text-white">
-                  Website
+                  Click here
                 </button>
               </Link>
             </div>
@@ -97,7 +97,7 @@ export default async function Page({
         </div>
       </section>
 
-      <section className="grid grid-cols-1 gap-8 px-10 pt-16 sm:gap-16 md:grid-cols-3 lg:pt-32">
+      <section className="grid grid-cols-1 gap-8 px-4 pt-16 sm:gap-16 sm:px-10 md:grid-cols-3 lg:pt-32">
         {(() => {
           if (portfolio.techStacksOrTools === "techstacks") {
             return (
