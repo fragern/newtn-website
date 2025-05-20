@@ -81,10 +81,10 @@ const ContactUs = () => {
 
         <div className="z-10 flex flex-1 items-center justify-center">
           <form
-            className="flex w-full flex-col gap-8 text-primary lg:max-w-screen-md"
+            className="flex w-full flex-col gap-2 text-primary lg:max-w-screen-md"
             onSubmit={handleSubmit(onSubmit)}
           >
-            <div className="flex flex-col gap-8 lg:flex-row">
+            <div className="flex flex-col gap-2 lg:flex-row">
               <div className="flex w-full flex-col gap-2">
                 <input
                   {...register("name", { required: "Name is required" })}

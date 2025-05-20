@@ -8,7 +8,7 @@ interface TechStacksProps {
 const TechStacks: React.FC<TechStacksProps> = ({ frontend, infra }) => {
   return (
     <div className="col-span-1 flex flex-col justify-center gap-8">
-      <h2 className="text-center font-bold">Tech Stack</h2>
+      <h2 className="text-center font-bold text-primary">Tech Stack</h2>
 
       <div className="flex flex-col gap-8 sm:flex-row md:flex-col xl:flex-row">
         <div className="flex w-full flex-col gap-3">

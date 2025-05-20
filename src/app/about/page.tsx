@@ -2,6 +2,7 @@ import Image from "next/image";
 import { designers } from "@/data/newtn-talents/designers";
 import { developers } from "@/data/newtn-talents/developers";
 import { projectManagers } from "@/data/newtn-talents/project-managers";
+import ListOfCompany from "../_components/ListOfCompany";
 import NewtnTalentCard from "../_components/NewtnTalentCard";
 import ServiceCard from "../_components/ServiceCard";
 
@@ -52,7 +53,7 @@ export default function About() {
         <ServiceCard />
       </section>
 
-      <section className="flex w-full max-w-5xl flex-col px-4 pb-8 sm:px-0">
+      <section className="flex w-full max-w-5xl flex-col px-4 pb-8 sm:px-0 sm:pb-24">
         <h1 className="mb-8 text-left text-3xl font-semibold text-primary">
           Our Talents
         </h1>
@@ -66,6 +67,7 @@ export default function About() {
           <NewtnTalentCard key={index} talent={designer} />
         ))}
       </section>
+      <ListOfCompany />
     </div>
   );
 }
