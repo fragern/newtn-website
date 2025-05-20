@@ -25,13 +25,12 @@ export const assets2D3DPortfolios: Portfolio[] = [
     frontend: [],
     infra: [],
     tools: [AdobeIllustrator],
-    logo: "/assets/images/portfolio/web-development/yayasan-bumn/logo.webp",
-    coverImage:
-      "/assets/images/portfolio/web-development/yayasan-bumn/cover-image.webp",
+    logo: "/assets/images/portfolio/asset-design/kreate/logo.svg",
+    coverImage: "/assets/images/portfolio/asset-design/kreate/cover-image.svg",
     showcaseImage1:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-1.webp",
+      "/assets/images/portfolio/asset-design/kreate/showcase-image-1.svg",
     showcaseImage2:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-2.webp",
+      "/assets/images/portfolio/asset-design/kreate/showcase-image-2.svg",
   },
   {
     id: 2,
@@ -48,13 +47,13 @@ export const assets2D3DPortfolios: Portfolio[] = [
     frontend: [],
     infra: [],
     tools: [Figma],
-    logo: "/assets/images/portfolio/web-development/yayasan-bumn/logo.webp",
+    logo: "/assets/images/portfolio/asset-design/keepingg/logo.svg",
     coverImage:
-      "/assets/images/portfolio/web-development/yayasan-bumn/cover-image.webp",
+      "/assets/images/portfolio/asset-design/keepingg/cover-image.svg",
     showcaseImage1:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-1.webp",
+      "/assets/images/portfolio/asset-design/keepingg/showcase-image-1.svg",
     showcaseImage2:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-2.webp",
+      "/assets/images/portfolio/asset-design/keepingg/showcase-image-2.svg",
   },
   {
     id: 3,
@@ -71,13 +70,12 @@ export const assets2D3DPortfolios: Portfolio[] = [
     frontend: [],
     infra: [],
     tools: [Rive, DaVinciResolve],
-    logo: "/assets/images/portfolio/web-development/yayasan-bumn/logo.webp",
-    coverImage:
-      "/assets/images/portfolio/web-development/yayasan-bumn/cover-image.webp",
+    logo: "/assets/images/portfolio/asset-design/manta/logo.svg",
+    coverImage: "/assets/images/portfolio/asset-design/manta/cover-image.svg",
     showcaseImage1:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-1.webp",
+      "/assets/images/portfolio/asset-design/manta/showcase-image-1.svg",
     showcaseImage2:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-2.webp",
+      "/assets/images/portfolio/asset-design/manta/showcase-image-2.svg",
   },
   {
     id: 4,
@@ -93,13 +91,13 @@ export const assets2D3DPortfolios: Portfolio[] = [
     frontend: [],
     infra: [],
     tools: [Blender, AdobeAfterEffects],
-    logo: "/assets/images/portfolio/web-development/yayasan-bumn/logo.webp",
+    logo: "/assets/images/portfolio/asset-design/retro-buddies/logo.svg",
     coverImage:
-      "/assets/images/portfolio/web-development/yayasan-bumn/cover-image.webp",
+      "/assets/images/portfolio/asset-design/retro-buddies/cover-image.svg",
     showcaseImage1:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-1.webp",
+      "/assets/images/portfolio/asset-design/retro-buddies/showcase-image-1.svg",
     showcaseImage2:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-2.webp",
+      "/assets/images/portfolio/asset-design/retro-buddies/showcase-image-2.svg",
   },
   {
     id: 5,
@@ -116,12 +114,12 @@ export const assets2D3DPortfolios: Portfolio[] = [
     frontend: [],
     infra: [],
     tools: [Blender, AdobeAfterEffects],
-    logo: "/assets/images/portfolio/web-development/yayasan-bumn/logo.webp",
+    logo: "/assets/images/portfolio/asset-design/basic-3d/logo.svg",
     coverImage:
-      "/assets/images/portfolio/web-development/yayasan-bumn/cover-image.webp",
+      "/assets/images/portfolio/asset-design/basic-3d/cover-image.svg",
     showcaseImage1:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-1.webp",
+      "/assets/images/portfolio/asset-design/basic-3d/showcase-image-1.svg",
     showcaseImage2:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-2.webp",
+      "/assets/images/portfolio/asset-design/basic-3d/showcase-image-2.svg",
   },
 ];

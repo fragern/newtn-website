@@ -20,43 +20,43 @@ export const appDevelopmentPortfolios: Portfolio[] = [
     short_description:
       "A holistic app helping individuals manage HIV care through medication tracking, viral load visualization, education, and community support.",
     members: "Nuel, Nafis, Eric, Rian, Dani",
-    duration: "Aug - Nov 2024",
+    duration: "3 Months",
     tags: ["Apps Design", "Apps Dev"],
     link: "https://apps.apple.com/app/apical/id6737177998",
     techStacksOrTools: "techstacks",
     frontend: [Swift],
     infra: [Golang, GCP],
     tools: [],
-    logo: "/assets/images/portfolio/web-development/yayasan-bumn/logo.webp",
+    logo: "/assets/images/portfolio/app-development/apical/logo.webp",
     coverImage:
-      "/assets/images/portfolio/web-development/yayasan-bumn/cover-image.webp",
+      "/assets/images/portfolio/app-development/apical/cover-image.webp",
     showcaseImage1:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-1.webp",
+      "/assets/images/portfolio/app-development/apical/showcase-image-1.svg",
     showcaseImage2:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-2.webp",
+      "/assets/images/portfolio/app-development/apical/showcase-image-2.svg",
   },
   {
     id: 2,
     category: AppDevelopment,
-    title: "Vocapy",
-    description: `Vocapy is a vocabulary-building app designed to help users expand their word bank with curated content using the proven Leitner system. Tackling a critical challenge faced by language learners—limited vocabulary that hinders engagement with English academic texts and conversations—Vocapy combines essential vocabulary with spaced repetition to empower users to master and memorize words at their own pace. By providing a strong foundation for confident, independent communication, the app enables learners to enhance their language skills effectively and efficiently.`,
+    title: "Hikewise",
+    description: `Hikewise`,
     short_description:
-      "A vocabulary-building app that uses spaced repetition to help learners master essential English words for confident communication.",
-    members: "Agfi",
-    duration: "Aug - Nov 2024",
+      "An app that helps users track their journey in mountain.",
+    members: "Bryan, Aldrich",
+    duration: "3 Months",
     tags: ["Apps Design", "Apps Dev"],
-    link: "https://apps.apple.com/id/app/vocapy/id6736434457",
+    link: "",
     techStacksOrTools: "techstacks",
     frontend: [Swift],
     infra: [Golang, GCP],
     tools: [],
-    logo: "/assets/images/portfolio/web-development/yayasan-bumn/logo.webp",
+    logo: "/assets/images/portfolio/app-development/hikewise/logo.webp",
     coverImage:
-      "/assets/images/portfolio/web-development/yayasan-bumn/cover-image.webp",
+      "/assets/images/portfolio/app-development/hikewise/cover-image.webp",
     showcaseImage1:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-1.webp",
+      "/assets/images/portfolio/app-development/hikewise/showcase-image-1.svg",
     showcaseImage2:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-2.webp",
+      "/assets/images/portfolio/app-development/hikewise/showcase-image-2.svg",
   },
   {
     id: 3,
@@ -73,13 +73,13 @@ export const appDevelopmentPortfolios: Portfolio[] = [
     frontend: [ReactJS, ReactNative],
     infra: [NodeJS, Laravel],
     tools: [],
-    logo: "/assets/images/portfolio/web-development/yayasan-bumn/logo.webp",
+    logo: "/assets/images/portfolio/app-development/dealdulu/logo.webp",
     coverImage:
-      "/assets/images/portfolio/web-development/yayasan-bumn/cover-image.webp",
+      "/assets/images/portfolio/app-development/dealdulu/cover-image.webp",
     showcaseImage1:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-1.webp",
+      "/assets/images/portfolio/app-development/dealdulu/showcase-image-1.svg",
     showcaseImage2:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-2.webp",
+      "/assets/images/portfolio/app-development/dealdulu/showcase-image-2.svg",
   },
   {
     id: 4,
@@ -96,13 +96,13 @@ export const appDevelopmentPortfolios: Portfolio[] = [
     frontend: [],
     infra: [NodeJS, Laravel],
     tools: [],
-    logo: "/assets/images/portfolio/web-development/yayasan-bumn/logo.webp",
+    logo: "/assets/images/portfolio/app-development/evoria/logo.webp",
     coverImage:
-      "/assets/images/portfolio/web-development/yayasan-bumn/cover-image.webp",
+      "/assets/images/portfolio/app-development/evoria/cover-image.webp",
     showcaseImage1:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-1.webp",
+      "/assets/images/portfolio/app-development/evoria/showcase-image-1.svg",
     showcaseImage2:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-2.webp",
+      "/assets/images/portfolio/app-development/evoria/showcase-image-2.svg",
   },
   {
     id: 5,
@@ -119,12 +119,12 @@ export const appDevelopmentPortfolios: Portfolio[] = [
     frontend: [],
     infra: [],
     tools: [Figma],
-    logo: "/assets/images/portfolio/web-development/yayasan-bumn/logo.webp",
+    logo: "/assets/images/portfolio/app-development/cupk-mobile/logo.webp",
     coverImage:
-      "/assets/images/portfolio/web-development/yayasan-bumn/cover-image.webp",
+      "/assets/images/portfolio/app-development/cupk-mobile/cover-image.webp",
     showcaseImage1:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-1.webp",
+      "/assets/images/portfolio/app-development/cupk-mobile/showcase-image-1.svg",
     showcaseImage2:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-2.webp",
+      "/assets/images/portfolio/app-development/cupk-mobile/showcase-image-2.svg",
   },
 ];
