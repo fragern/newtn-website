@@ -40,7 +40,7 @@ export default async function Page({
 
         <div className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 bg-black/50"></div>
 
-        <h1 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-5xl font-bold text-white">
+        <h1 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-5xl font-semibold text-white">
           {portfolio.title}
         </h1>
         <p className="absolute left-10 top-16 text-base font-semibold text-white sm:text-lg md:text-xl">
@@ -114,7 +114,7 @@ export default async function Page({
         })()}
 
         <div className="item-center col-span-1 flex flex-col justify-center gap-8 sm:col-span-2 sm:flex-row">
-          <div className="relative h-[300px] w-full sm:h-[350px] sm:w-[338px] lg:h-[450px] xl:h-[484px]">
+          <div className="relative h-[516px] w-full sm:h-[350px] sm:w-[338px] lg:h-[450px] xl:h-[484px]">
             <Image
               src={portfolio.showcaseImage1}
               alt={`${portfolio.title}'s showcase image 1`}
@@ -135,7 +135,7 @@ export default async function Page({
       </section>
 
       <section className="flex w-full flex-col gap-12 py-32 sm:gap-16 lg:py-64">
-        <h1 className="px-10 text-center text-3xl font-medium sm:text-4xl">
+        <h1 className="px-10 text-center text-3xl font-semibold text-primary sm:text-4xl">
           Other projects in {portfolio.category.name}
         </h1>
 
