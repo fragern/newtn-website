@@ -54,7 +54,7 @@ export default function Portfolio() {
 
         <div className="flex flex-col items-center py-28">
           {/* Top Category Bar */}
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-wrap justify-center gap-6 px-4">
             {PortfolioCategories.map((category) => (
               <button
                 key={category.id}
