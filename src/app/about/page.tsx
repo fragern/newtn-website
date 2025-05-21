@@ -20,8 +20,8 @@ export default function About() {
         </div>
       </div>
 
-      <section className="flex max-w-5xl flex-col gap-14 md:gap-28 lg:flex-row lg:items-center lg:justify-between lg:pt-48">
-        <div className="w-fill flex flex-none flex-col items-center gap-2 pt-8 text-4xl md:gap-5 md:pt-0 lg:w-fit lg:items-start">
+      <section className="flex max-w-5xl flex-col gap-14 px-4 pt-24 lg:flex-row lg:items-center lg:justify-between lg:gap-28 lg:pt-48">
+        <div className="w-fill flex flex-none flex-col items-start gap-2 pt-8 text-4xl md:gap-5 md:pt-0 lg:w-fit lg:items-start">
           <p className="text-2xl font-semibold text-primary md:text-4xl">
             We are
           </p>
@@ -37,7 +37,7 @@ export default function About() {
         </div>
 
         <div className="flex flex-1 flex-col gap-6">
-          <p className="px-4 text-center text-lg text-primary lg:px-0 lg:text-start lg:text-xl">
+          <p className="text-start text-lg text-primary lg:px-0 lg:text-xl">
             Newtn was founded by a team of passionate developers and designers
             driven by innovation. Inspired by Newton&apos;s apple—a symbol of
             curiosity and discovery—we turn ideas into reality, creating
