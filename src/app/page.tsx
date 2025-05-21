@@ -263,7 +263,7 @@ export default function Home() {
           >
             <motion.a
               href="mailto:contactnewtn@gmail.com"
-              className="rounded-full border border-primary bg-primary px-6 py-2 text-base font-medium text-white hover:bg-white hover:text-primary sm:text-xl"
+              className="rounded-full border border-primary bg-primary px-6 py-2 text-center text-base font-medium text-white hover:bg-white hover:text-primary sm:text-xl"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -271,7 +271,7 @@ export default function Home() {
             </motion.a>
             <motion.a
               href="/portfolio"
-              className="rounded-full border border-primary bg-white px-6 py-2 text-base font-medium text-primary hover:bg-primary hover:text-white sm:text-xl"
+              className="rounded-full border border-primary bg-white px-6 py-2 text-center text-base font-medium text-primary hover:bg-primary hover:text-white sm:text-xl"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
