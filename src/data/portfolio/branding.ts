@@ -17,13 +17,12 @@ export const brandingPortfolios: Portfolio[] = [
     frontend: [],
     infra: [],
     tools: [AdobeIllustrator, AdobePhotoshop],
-    logo: "/assets/images/portfolio/web-development/yayasan-bumn/logo.webp",
-    coverImage:
-      "/assets/images/portfolio/web-development/yayasan-bumn/cover-image.webp",
+    logo: "/assets/images/portfolio/branding/jiwajiwa/logo.webp",
+    coverImage: "/assets/images/portfolio/branding/jiwajiwa/cover-image.webp",
     showcaseImage1:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-1.webp",
+      "/assets/images/portfolio/branding/jiwajiwa/showcase-image-1.svg",
     showcaseImage2:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-2.webp",
+      "/assets/images/portfolio/branding/jiwajiwa/showcase-image-2.svg",
   },
   {
     id: 2,
@@ -40,13 +39,13 @@ export const brandingPortfolios: Portfolio[] = [
     frontend: [],
     infra: [],
     tools: [AdobeIllustrator, AdobePhotoshop],
-    logo: "/assets/images/portfolio/web-development/yayasan-bumn/logo.webp",
+    logo: "/assets/images/portfolio/branding/memilih-masa-depan/logo.webp",
     coverImage:
-      "/assets/images/portfolio/web-development/yayasan-bumn/cover-image.webp",
+      "/assets/images/portfolio/branding/memilih-masa-depan/cover-image.webp",
     showcaseImage1:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-1.webp",
+      "/assets/images/portfolio/branding/memilih-masa-depan/showcase-image-1.svg",
     showcaseImage2:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-2.webp",
+      "/assets/images/portfolio/branding/memilih-masa-depan/showcase-image-2.svg",
   },
   {
     id: 3,
@@ -63,12 +62,12 @@ export const brandingPortfolios: Portfolio[] = [
     frontend: [],
     infra: [],
     tools: [AdobeIllustrator, AdobePhotoshop],
-    logo: "/assets/images/portfolio/web-development/yayasan-bumn/logo.webp",
+    logo: "/assets/images/portfolio/branding/trans-makmur-bersama/logo.webp",
     coverImage:
-      "/assets/images/portfolio/web-development/yayasan-bumn/cover-image.webp",
+      "/assets/images/portfolio/branding/trans-makmur-bersama/cover-image.webp",
     showcaseImage1:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-1.webp",
+      "/assets/images/portfolio/branding/trans-makmur-bersama/showcase-image-1.svg",
     showcaseImage2:
-      "/assets/images/portfolio/web-development/yayasan-bumn/showcase-image-2.webp",
+      "/assets/images/portfolio/branding/trans-makmur-bersama/showcase-image-2.svg",
   },
 ];

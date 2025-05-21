@@ -40,7 +40,7 @@ export default async function Page({
 
         <div className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 bg-black/50"></div>
 
-        <h1 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-5xl font-bold text-white">
+        <h1 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-5xl font-semibold text-white">
           {portfolio.title}
         </h1>
         <p className="absolute left-10 top-16 text-base font-semibold text-white sm:text-lg md:text-xl">
@@ -51,7 +51,7 @@ export default async function Page({
         </p>
       </section>
 
-      <section className="grid grid-cols-1 gap-8 px-10 pt-16 lg:grid-cols-3 lg:gap-16 lg:pt-32">
+      <section className="grid grid-cols-1 gap-8 px-4 pt-16 sm:px-10 lg:grid-cols-3 lg:gap-16 lg:pt-32">
         <div className="relative col-span-1 h-20 sm:h-24 md:h-28 lg:h-[119px]">
           <Image
             src={portfolio.logo}
@@ -77,7 +77,7 @@ export default async function Page({
 
             <div className="flex flex-1 flex-col gap-2">
               <h2 className="font-sans font-semibold">Tags</h2>
-              <p>{portfolio.tags}</p>
+              <p>{portfolio.tags[0]}</p>
             </div>
 
             <div className="flex flex-1 flex-col items-center gap-2">
@@ -89,7 +89,7 @@ export default async function Page({
                 rel="noopener noreferrer"
               >
                 <button className="w-full rounded-full bg-primary py-1 text-white">
-                  Website
+                  Click here
                 </button>
               </Link>
             </div>
@@ -97,7 +97,7 @@ export default async function Page({
         </div>
       </section>
 
-      <section className="grid grid-cols-1 gap-8 px-10 pt-16 sm:gap-16 md:grid-cols-3 lg:pt-32">
+      <section className="grid grid-cols-1 gap-8 px-4 pt-16 sm:gap-16 sm:px-10 md:grid-cols-3 lg:pt-32">
         {(() => {
           if (portfolio.techStacksOrTools === "techstacks") {
             return (
@@ -114,7 +114,7 @@ export default async function Page({
         })()}
 
         <div className="item-center col-span-1 flex flex-col justify-center gap-8 sm:col-span-2 sm:flex-row">
-          <div className="relative h-[300px] w-full sm:h-[350px] sm:w-[338px] lg:h-[450px] xl:h-[484px]">
+          <div className="relative h-[516px] w-full sm:h-[350px] sm:w-[338px] lg:h-[450px] xl:h-[484px]">
             <Image
               src={portfolio.showcaseImage1}
               alt={`${portfolio.title}'s showcase image 1`}
@@ -135,7 +135,7 @@ export default async function Page({
       </section>
 
       <section className="flex w-full flex-col gap-12 py-32 sm:gap-16 lg:py-64">
-        <h1 className="px-10 text-center text-3xl font-medium sm:text-4xl">
+        <h1 className="px-10 text-center text-3xl font-semibold text-primary sm:text-4xl">
           Other projects in {portfolio.category.name}
         </h1>
 

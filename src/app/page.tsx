@@ -1,8 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import Link from "next/link";
+import { motion, useAnimation } from "framer-motion";
 import { allPortfolios } from "@/data/portfolio/all-portfolios";
 import {
   PortfolioCategories,
@@ -22,13 +24,64 @@ export default function Home() {
     setIsOpen(false);
   };
 
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [inView, controls]);
+
+  const createSvgVariant = (scaleY = 1) => ({
+    hidden: {
+      opacity: 0,
+      y: 50,
+      scaleX: 1,
+      scaleY: 1,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scaleX: 1,
+      scaleY,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  });
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <main className="overflow-x-clip">
       <section className="relative flex w-full justify-center px-4 pb-64 pt-32">
         <div className="absolute bottom-0 w-full max-w-7xl">
           <div className="relative w-full scale-75 sm:scale-[.8] md:scale-[.85] lg:scale-90 xl:scale-100">
-            <svg
-              className="absolute -bottom-56 left-0 h-[500px] -scale-x-100 scale-y-75"
+            {/* Left side SVGs */}
+            <motion.svg
+              ref={ref}
+              initial="hidden"
+              animate={controls}
+              variants={createSvgVariant(0.75)}
+              className="absolute -bottom-56 -left-24 h-[500px] sm:left-0"
               width="258"
               height="742"
               viewBox="0 0 258 742"
@@ -36,19 +89,23 @@ export default function Home() {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M0 270V599L243 742L243.5 0.5L0 270Z"
+                d="M258 270V599L15 742L14.5 0.5L258 270Z"
                 fill="#829EBF"
                 fillOpacity="0.8"
               />
               <path
-                d="M257.5 732.5L243 742L243.5 0.5L257.5 18.5V732.5Z"
+                d="M0.5 732.5L15 742L14.5 0.5L0.5 18.5V732.5Z"
                 fill="#73879F"
                 fillOpacity="0.8"
               />
-            </svg>
+            </motion.svg>
 
-            <svg
-              className="absolute -bottom-56 left-32 h-[500px] -scale-x-100 scale-y-90"
+            <motion.svg
+              ref={ref}
+              initial="hidden"
+              animate={controls}
+              variants={createSvgVariant(0.9)}
+              className="absolute -bottom-56 -left-12 h-[500px] sm:left-32"
               width="258"
               height="742"
               viewBox="0 0 258 742"
@@ -56,19 +113,23 @@ export default function Home() {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M0 270V599L243 742L243.5 0.5L0 270Z"
+                d="M258 270V599L15 742L14.5 0.5L258 270Z"
                 fill="#829EBF"
                 fillOpacity="0.8"
               />
               <path
-                d="M257.5 732.5L243 742L243.5 0.5L257.5 18.5V732.5Z"
+                d="M0.5 732.5L15 742L14.5 0.5L0.5 18.5V732.5Z"
                 fill="#73879F"
                 fillOpacity="0.8"
               />
-            </svg>
+            </motion.svg>
 
-            <svg
-              className="absolute -bottom-56 left-64 h-[500px] -scale-x-100"
+            <motion.svg
+              ref={ref}
+              initial="hidden"
+              animate={controls}
+              variants={createSvgVariant(1)}
+              className="absolute -bottom-56 left-0 h-[500px] sm:left-64"
               width="258"
               height="742"
               viewBox="0 0 258 742"
@@ -76,19 +137,24 @@ export default function Home() {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M0 270V599L243 742L243.5 0.5L0 270Z"
+                d="M258 270V599L15 742L14.5 0.5L258 270Z"
                 fill="#829EBF"
                 fillOpacity="0.8"
               />
               <path
-                d="M257.5 732.5L243 742L243.5 0.5L257.5 18.5V732.5Z"
+                d="M0.5 732.5L15 742L14.5 0.5L0.5 18.5V732.5Z"
                 fill="#73879F"
                 fillOpacity="0.8"
               />
-            </svg>
+            </motion.svg>
 
-            <svg
-              className="absolute -bottom-56 right-0 h-[500px] scale-y-75"
+            {/* Right side SVGs */}
+            <motion.svg
+              ref={ref}
+              initial="hidden"
+              animate={controls}
+              variants={createSvgVariant(0.75)}
+              className="absolute -bottom-56 -right-24 h-[500px] sm:right-0"
               width="258"
               height="742"
               viewBox="0 0 258 742"
@@ -105,10 +171,14 @@ export default function Home() {
                 fill="#73879F"
                 fillOpacity="0.8"
               />
-            </svg>
+            </motion.svg>
 
-            <svg
-              className="absolute -bottom-56 right-32 h-[500px] scale-y-90"
+            <motion.svg
+              ref={ref}
+              initial="hidden"
+              animate={controls}
+              variants={createSvgVariant(0.9)}
+              className="absolute -bottom-56 -right-12 h-[500px] sm:right-32"
               width="258"
               height="742"
               viewBox="0 0 258 742"
@@ -125,10 +195,14 @@ export default function Home() {
                 fill="#73879F"
                 fillOpacity="0.8"
               />
-            </svg>
+            </motion.svg>
 
-            <svg
-              className="absolute -bottom-56 right-64 h-[500px]"
+            <motion.svg
+              ref={ref}
+              initial="hidden"
+              animate={controls}
+              variants={createSvgVariant(1)}
+              className="absolute -bottom-56 -right-0 h-[500px] sm:right-64"
               width="258"
               height="742"
               viewBox="0 0 258 742"
@@ -145,41 +219,66 @@ export default function Home() {
                 fill="#73879F"
                 fillOpacity="0.8"
               />
-            </svg>
+            </motion.svg>
           </div>
         </div>
 
-        <div className="flex w-full max-w-5xl flex-col items-center gap-16">
-          <div className="relative flex flex-col gap-4 overflow-visible">
-            <div className="absolute inset-0 -z-10 m-auto mt-1 size-96 rounded-full bg-[#C7D9E5] blur-[128px]"></div>
+        <motion.div
+          className="flex w-full max-w-5xl flex-col items-center gap-16"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.div
+            className="relative flex flex-col gap-4 overflow-visible"
+            variants={itemVariants}
+          >
+            <motion.div
+              className="absolute inset-0 -z-10 m-auto mt-1 size-96 rounded-full bg-[#C7D9E5] blur-[128px]"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.2, ease: "easeOut", delay: 0.4 }}
+            />
 
-            <h1 className="mx-auto max-w-3xl text-center text-5xl font-semibold text-primary">
+            <motion.h1
+              className="mx-auto max-w-3xl text-center text-3xl font-semibold text-primary sm:text-5xl"
+              variants={itemVariants}
+            >
               Your end-to-end tech partner with a product-first mindset
-            </h1>
+            </motion.h1>
 
-            <p className="mx-auto max-w-4xl text-center text-2xl font-light text-primary">
+            <motion.p
+              className="mx-auto max-w-4xl text-center text-xl font-light text-primary sm:text-2xl"
+              variants={itemVariants}
+            >
               From idea to launch, Newtn delivers full-cycle product development
               — combining sharp design, agile engineering, and reliable
               deployment to turn bold ideas into impactful digital products.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
-          <div className="flex items-center justify-center gap-4">
-            <a
+          <motion.div
+            className="flex items-center justify-center gap-4"
+            variants={itemVariants}
+          >
+            <motion.a
               href="mailto:contactnewtn@gmail.com"
-              className="rounded-full border border-primary bg-primary px-6 py-2 text-xl font-medium text-white hover:bg-white hover:text-primary"
+              className="rounded-full border border-primary bg-primary px-6 py-2 text-center text-base font-medium text-white hover:bg-white hover:text-primary sm:text-xl"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               Let&apos;s Talk
-            </a>
-            <Link
+            </motion.a>
+            <motion.a
               href="/portfolio"
-              passHref
-              className="rounded-full border border-primary bg-white px-6 py-2 text-xl font-medium text-primary hover:bg-primary hover:text-white"
+              className="rounded-full border border-primary bg-white px-6 py-2 text-center text-base font-medium text-primary hover:bg-primary hover:text-white sm:text-xl"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               Explore our work
-            </Link>
-          </div>
-        </div>
+            </motion.a>
+          </motion.div>
+        </motion.div>
       </section>
 
       <section className="flex w-full justify-center bg-white/50 px-4 pt-32 backdrop-blur-sm">
@@ -210,19 +309,30 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex w-full max-w-4xl flex-col gap-4">
-            <h1 className="text-center text-4xl font-semibold text-primary">
+          <motion.div
+            className="flex w-full max-w-4xl flex-col gap-4"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.h1
+              className="text-center text-2xl font-semibold text-primary sm:text-4xl"
+              variants={itemVariants}
+            >
               End-to-End Services, Delivered Effortlessly
-            </h1>
+            </motion.h1>
 
-            <p className="text-center text-xl font-light text-primary">
+            <motion.p
+              className="text-center text-lg font-light text-primary sm:text-xl"
+              variants={itemVariants}
+            >
               We specialize in comprehensive digital solutions, delivering
               end-to-end services that encompass asset creation, UI/UX design,
               development, and seamless deployment. Our expertise ensures a
               streamlined journey from concept to launch, empowering your
               digital presence.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           <ServiceCard />
         </div>
@@ -257,7 +367,7 @@ export default function Home() {
           </div>
 
           <div className="flex w-full max-w-3xl flex-col gap-4">
-            <h1 className="text-5xl font-bold text-primary">
+            <h1 className="text-3xl font-bold text-primary sm:text-5xl">
               Newtn&apos;s Projects
             </h1>
 
@@ -265,7 +375,9 @@ export default function Home() {
               className="relative flex w-fit cursor-pointer items-center gap-3"
               onClick={() => setIsOpen(!isOpen)}
             >
-              <p className="text-xl text-primary">{selectedCategory.name}</p>
+              <p className="text-lg text-primary sm:text-xl">
+                {selectedCategory.name}
+              </p>
 
               <svg
                 className={`size-2.5 text-primary transition-transform ${isOpen ? "rotate-90" : ""}`}
@@ -353,7 +465,7 @@ export default function Home() {
             </svg>
 
             <span className="flex gap-1">
-              <p className="text-xl text-primary">See all work</p>
+              <p className="text-lg text-primary sm:text-xl">See all work</p>
               <p className="text-sm">({allPortfolios.length})</p>
             </span>
           </Link>

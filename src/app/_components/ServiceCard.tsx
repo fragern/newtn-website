@@ -30,23 +30,8 @@ export default function ServiceCard() {
 
   return (
     <div className="relative max-w-5xl">
-      {/* <Image
-        src="/assets/images/supergraphics/BehindOurService.svg"
-        alt="Behind Our Service"
-        width={400}
-        height={400}
-        className="pointer-events-none absolute -bottom-24 -right-24 -z-10 select-none"
-      />
-      <Image
-        src="/assets/images/supergraphics/BehindOurService2.svg"
-        alt="Behind Our Service"
-        width={400}
-        height={400}
-        className="pointer-events-none absolute -top-24 right-0 -z-10 select-none"
-      /> */}
-
-      <div className="flex flex-row gap-6">
-        <div className="rounded-2xl border border-primary bg-white p-10">
+      <div className="flex flex-col gap-6 sm:flex-row">
+        <div className="rounded-2xl border border-primary bg-white p-6 sm:p-10">
           <Image
             src={"/assets/images/newtnDevelopment.svg"}
             alt="Newtn Development"
@@ -54,17 +39,17 @@ export default function ServiceCard() {
             height={100}
             className="mb-4"
           />
-          <h1 className="mb-2 text-left text-3xl font-semibold text-primary">
+          <h1 className="mb-2 text-left text-xl font-semibold text-primary sm:text-3xl">
             Development
           </h1>
-          <p className="mb-5 text-lg text-primary">
+          <p className="mb-5 text-base text-primary sm:text-lg">
             Crafting responsive, user-friendly websites and building intuitive,
             high-performance mobile apps for iOS and Android, tailored to your
             business needs.
           </p>
           <div className="flex flex-wrap gap-2">{renderPills(development)}</div>
         </div>
-        <div className="rounded-2xl border border-primary bg-white p-10">
+        <div className="rounded-2xl border border-primary bg-white p-6 sm:p-10">
           <Image
             src={"/assets/images/newtnDesign.svg"}
             alt="Newtn Design"
@@ -72,10 +57,10 @@ export default function ServiceCard() {
             height={90}
             className="mb-4"
           />
-          <h1 className="mb-2 text-left text-3xl font-semibold text-primary">
+          <h1 className="mb-2 text-left text-xl font-semibold text-primary sm:text-3xl">
             Design
           </h1>
-          <p className="mb-5 text-lg text-primary">
+          <p className="mb-5 text-base text-primary sm:text-lg">
             Creating stunning app and web designs, strong brand identities, and
             high-quality 2D & 3D assets with engaging motion graphics, all
             driven by in-depth UX research.

@@ -45,7 +45,7 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col gap-4">
-            <h5 className="mb-2 text-lg font-semibold">Menu</h5>
+            <h5 className="mb-2 text-lg font-semibold">Find us!</h5>
 
             <Link
               href="https://instagram.com/newtn.id"

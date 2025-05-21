@@ -41,10 +41,10 @@ export default function Portfolio() {
         </div>
 
         <div className="relative z-20 mx-auto flex max-w-5xl flex-col items-start justify-center gap-2 px-4 pt-20 text-[#2F4157] lg:px-8 lg:pt-72">
-          <h1 className="mb-4 text-left text-2xl font-semibold lg:text-5xl">
+          <h1 className="mb-4 text-left text-2xl font-semibold sm:text-5xl">
             Where Ideas Come to Life
           </h1>
-          <p className="text-left text-sm lg:text-2xl">
+          <p className="text-left text-base lg:text-2xl">
             Explore our portfolio, showcasing projects our member has
             contributed to. From sleek websites to immersive mobile apps and
             captivating designs, each reflects our passion for innovation and
@@ -54,12 +54,12 @@ export default function Portfolio() {
 
         <div className="flex flex-col items-center py-28">
           {/* Top Category Bar */}
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-wrap justify-center gap-6 px-4">
             {PortfolioCategories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category)}
-                className={`text-lg font-medium transition-all duration-300 ease-in-out ${
+                className={`text-base font-medium transition-all duration-300 ease-in-out sm:text-lg ${
                   selectedCategory.id === category.id
                     ? "font-semibold text-primary"
                     : "text-[#AAB9CC] hover:text-[#3B506B]"

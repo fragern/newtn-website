@@ -7,11 +7,12 @@ import {
   FaReact,
   FaSwift,
 } from "react-icons/fa6";
+import { SiSolana } from "react-icons/si";
 import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
 import type { TechTool } from "@/types/TechTool";
 
 export const TailwindCSS: TechTool = {
-  name: "Tailwind Css",
+  name: "Tailwind CSS",
   icon: <SiTailwindcss className="h-full w-full object-contain text-primary" />,
 };
 
@@ -60,4 +61,9 @@ export const NodeJS: TechTool = {
 export const Laravel: TechTool = {
   name: "Laravel",
   icon: <FaLaravel className="h-full w-full object-contain text-primary" />,
+};
+
+export const Solana: TechTool = {
+  name: "Solana",
+  icon: <SiSolana className="h-full w-full object-contain text-primary" />,
 };
