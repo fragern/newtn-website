@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { NewtnTalent } from "../../types/NewtnTalent";
+import type { NewtnTalent } from "../../types/NewtnTalent.ts";
 
 interface NewtnTalentCardProps {
   talent: NewtnTalent;
