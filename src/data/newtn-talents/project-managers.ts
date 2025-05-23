@@ -17,7 +17,7 @@ export const projectManagers: NewtnTalent[] = [
     linkedIn: "https://www.linkedin.com/in/feliciadiana/",
   },
   {
-    name: "Muhammad Nafis Aimanurrohman",
+    name: "Muhammad Nafis A.",
     role: "Project Manager",
     linkedIn: "https://www.linkedin.com/in/muhammad-nafis-aimanurrohman/",
   },

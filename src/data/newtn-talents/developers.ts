@@ -3,42 +3,42 @@ import type { NewtnTalent } from "@/types/NewtnTalent";
 export const developers: NewtnTalent[] = [
   {
     name: "Eric Fernando",
-    role: "Full-stack Developer",
+    role: "Full-stack",
     linkedIn: "https://www.linkedin.com/in/ericfrndo/",
   },
   {
     name: "Agfi Hermawan",
-    role: "Full-stack Developer",
+    role: "Full-stack",
     linkedIn: "https://www.linkedin.com/in/thariqagfihermawan/",
   },
   {
-    name: "Mika Suryofakhri Rahwono",
-    role: "Backend Developer",
+    name: "Mika S. Rahwono",
+    role: "Backend",
     linkedIn: "https://www.linkedin.com/in/mikasrahwono/",
   },
   {
-    name: "Christian Aldrich Darrien",
-    role: "Backend Developer",
+    name: "C. Aldrich Darrien",
+    role: "Backend",
     linkedIn: "https://www.linkedin.com/in/christianaldrichd/",
   },
   {
     name: "Elian Richard",
-    role: "Full-stack Developer",
+    role: "Full-stack",
     linkedIn: "https://www.linkedin.com/in/elianrichard/",
   },
   {
-    name: "Christopher Nathanael Tessy",
-    role: "Frontend Developer",
+    name: "Christopher N. Tessy",
+    role: "Frontend",
     linkedIn: "https://www.linkedin.com/in/christophernathanaeltessy",
   },
   {
     name: "Rama Eka Hartono",
-    role: "Full-stack Developer",
+    role: "Full-stack",
     linkedIn: "https://www.linkedin.com/in/ramaekah/",
   },
   {
     name: "Bintang Anandhiya",
-    role: "Frontend Developer",
+    role: "Frontend",
     linkedIn: "https://www.linkedin.com/in/bintanganandhiya/",
   },
 ];
