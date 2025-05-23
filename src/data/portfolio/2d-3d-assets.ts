@@ -1,5 +1,3 @@
-import type { Portfolio } from "@/types/Portfolio";
-import { Assets2D3D } from "./portfolio-categories";
 import {
   AdobeAfterEffects,
   AdobeIllustrator,
@@ -8,6 +6,8 @@ import {
   Figma,
   Rive,
 } from "../tech-tools/tools";
+import { Assets2D3D } from "./portfolio-categories";
+import type { Portfolio } from "@/types/Portfolio";
 
 export const assets2D3DPortfolios: Portfolio[] = [
   {

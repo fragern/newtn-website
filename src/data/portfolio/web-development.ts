@@ -1,6 +1,6 @@
-import type { Portfolio } from "@/types/Portfolio";
-import { WebDevelopment } from "./portfolio-categories";
 import { NextJS, PHP, Solana, TailwindCSS } from "../tech-tools/tech-stack";
+import { WebDevelopment } from "./portfolio-categories";
+import type { Portfolio } from "@/types/Portfolio";
 
 export const webDevelopmentPortfolios: Portfolio[] = [
   {

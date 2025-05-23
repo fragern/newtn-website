@@ -10,8 +10,8 @@ import {
   PortfolioCategories,
   WebDevelopment,
 } from "@/data/portfolio/portfolio-categories";
-import type { PortfolioCategory } from "@/types/PortfolioCategory";
 import ServiceCard from "./_components/ServiceCard";
+import type { PortfolioCategory } from "@/types/PortfolioCategory";
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] =

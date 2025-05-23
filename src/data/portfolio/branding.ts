@@ -1,6 +1,6 @@
-import type { Portfolio } from "@/types/Portfolio";
-import { Branding } from "./portfolio-categories";
 import { AdobeIllustrator, AdobePhotoshop } from "../tech-tools/tools";
+import { Branding } from "./portfolio-categories";
+import type { Portfolio } from "@/types/Portfolio";
 
 export const brandingPortfolios: Portfolio[] = [
   {
