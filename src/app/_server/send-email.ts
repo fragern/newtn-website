@@ -1,6 +1,6 @@
 "use server";
 
-import type { EmailFormType } from "@/types/emailFormType";
+import type { EmailFormType } from "@/types/EmailFormType";
 
 const sendEmail = async ({ captcha, ...rest }: EmailFormType) => {
   try {

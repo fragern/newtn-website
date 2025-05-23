@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import Image from "next/image";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import sendEmail from "@/app/_server/send-email";
-import type { EmailFormType } from "@/types/emailFormType";
+import type { EmailFormType } from "@/types/EmailFormType";
 
 const ContactUs = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
