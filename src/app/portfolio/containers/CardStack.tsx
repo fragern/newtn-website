@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import type { Portfolio } from "@/types/Portfolio";
 import PortfolioCard from "../components/PortfolioCard";
+import type { Portfolio } from "@/types/Portfolio";
 
 interface CardStackProps {
   portfolios: Portfolio[];

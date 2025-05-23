@@ -1,15 +1,15 @@
 "use client";
 
 import React from "react";
-import type { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
-import type { Portfolio } from "@/types/Portfolio";
 import {
   PrevButton,
   NextButton,
   usePrevNextButtons,
 } from "./OtherProjectsCarouselArrowButtons";
 import PortfolioCard from "./PortfolioCard";
+import type { Portfolio } from "@/types/Portfolio";
+import type { EmblaOptionsType } from "embla-carousel";
 
 type PropType = {
   projects: Portfolio[];

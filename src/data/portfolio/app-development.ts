@@ -1,4 +1,5 @@
-import type { Portfolio } from "@/types/Portfolio";
+import { GCP } from "../tech-tools/tech-stack";
+import { Figma } from "../tech-tools/tools";
 import {
   Golang,
   Laravel,
@@ -8,8 +9,7 @@ import {
   Swift,
 } from "./../tech-tools/tech-stack";
 import { AppDevelopment } from "./portfolio-categories";
-import { GCP } from "../tech-tools/tech-stack";
-import { Figma } from "../tech-tools/tools";
+import type { Portfolio } from "@/types/Portfolio";
 
 export const appDevelopmentPortfolios: Portfolio[] = [
   {

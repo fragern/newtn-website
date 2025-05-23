@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import type { EmblaOptionsType } from "embla-carousel";
 import OtherProjectsCarousel from "@/app/_components/portfolio-detail/OtherProjectsCarousel";
 import TechStacks from "@/app/_components/portfolio-detail/TechStacks";
 import Tools from "@/app/_components/portfolio-detail/Tools";
 import { allPortfolios } from "@/data/portfolio/all-portfolios";
 import type { Portfolio } from "@/types/Portfolio";
+import type { EmblaOptionsType } from "embla-carousel";
 
 const OPTIONS: EmblaOptionsType = { loop: true };
 

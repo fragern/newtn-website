@@ -19,12 +19,13 @@ const eslintConfig = [
         "error",
         {
           groups: [
-            "external",
             "builtin",
+            "external",
             "internal",
-            "sibling",
             "parent",
+            "sibling",
             "index",
+            "type",
           ],
           pathGroups: [
             {
