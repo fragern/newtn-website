@@ -17,8 +17,8 @@ export const brandingPortfolios: Portfolio[] = [
     frontend: [],
     infra: [],
     tools: [AdobeIllustrator, AdobePhotoshop],
-    logo: "/assets/images/portfolio/branding/jiwajiwa/logo.webp",
-    coverImage: "/assets/images/portfolio/branding/jiwajiwa/cover-image.webp",
+    logo: "/assets/images/portfolio/branding/jiwajiwa/logo.svg",
+    coverImage: "/assets/images/portfolio/branding/jiwajiwa/jiwa2.png",
     showcaseImage1:
       "/assets/images/portfolio/branding/jiwajiwa/showcase-image-1.svg",
     showcaseImage2:
@@ -39,9 +39,8 @@ export const brandingPortfolios: Portfolio[] = [
     frontend: [],
     infra: [],
     tools: [AdobeIllustrator, AdobePhotoshop],
-    logo: "/assets/images/portfolio/branding/memilih-masa-depan/logo.webp",
-    coverImage:
-      "/assets/images/portfolio/branding/memilih-masa-depan/cover-image.webp",
+    logo: "/assets/images/portfolio/branding/memilih-masa-depan/logo.svg",
+    coverImage: "/assets/images/portfolio/branding/memilih-masa-depan/mmd.png",
     showcaseImage1:
       "/assets/images/portfolio/branding/memilih-masa-depan/showcase-image-1.svg",
     showcaseImage2:
@@ -62,9 +61,9 @@ export const brandingPortfolios: Portfolio[] = [
     frontend: [],
     infra: [],
     tools: [AdobeIllustrator, AdobePhotoshop],
-    logo: "/assets/images/portfolio/branding/trans-makmur-bersama/logo.webp",
+    logo: "/assets/images/portfolio/branding/trans-makmur-bersama/logo.svg",
     coverImage:
-      "/assets/images/portfolio/branding/trans-makmur-bersama/cover-image.webp",
+      "/assets/images/portfolio/branding/trans-makmur-bersama/tmb.png",
     showcaseImage1:
       "/assets/images/portfolio/branding/trans-makmur-bersama/showcase-image-1.svg",
     showcaseImage2:

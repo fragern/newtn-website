@@ -26,7 +26,7 @@ export const assets2D3DPortfolios: Portfolio[] = [
     infra: [],
     tools: [AdobeIllustrator],
     logo: "/assets/images/portfolio/asset-design/kreate/logo.svg",
-    coverImage: "/assets/images/portfolio/asset-design/kreate/cover-image.svg",
+    coverImage: "/assets/images/portfolio/asset-design/kreate/kreate.png",
     showcaseImage1:
       "/assets/images/portfolio/asset-design/kreate/showcase-image-1.svg",
     showcaseImage2:
