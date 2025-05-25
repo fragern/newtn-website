@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/next";
 import "@/styles/global.css";
 
 import Footer from "./_components/Footer";
@@ -55,6 +56,7 @@ export default function RootLayout({
       <body className={`${generalSansFont.variable} antialiased`}>
         <Header />
         <main>{children}</main>
+        <Analytics />
         <Footer />
       </body>
     </html>
