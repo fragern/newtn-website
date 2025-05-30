@@ -40,7 +40,8 @@ export const brandingPortfolios: Portfolio[] = [
     infra: [],
     tools: [AdobeIllustrator, AdobePhotoshop],
     logo: "/assets/images/portfolio/branding/memilih-masa-depan/logo.svg",
-    coverImage: "/assets/images/portfolio/branding/memilih-masa-depan/mmd.png",
+    coverImage:
+      "/assets/images/portfolio/branding/memilih-masa-depan/cover-image.svg",
     showcaseImage1:
       "/assets/images/portfolio/branding/memilih-masa-depan/showcase-image-1.svg",
     showcaseImage2:

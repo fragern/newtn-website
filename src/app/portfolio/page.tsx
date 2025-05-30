@@ -85,7 +85,7 @@ export default function Portfolio() {
               >
                 <div className="relative aspect-[4/3] w-full bg-gray-200">
                   <Image
-                    src={portfolio.showcaseImage2}
+                    src={portfolio.coverImage}
                     alt={`${portfolio.title}'s image`}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
