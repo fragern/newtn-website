@@ -26,7 +26,7 @@ export const assets2D3DPortfolios: Portfolio[] = [
     infra: [],
     tools: [AdobeIllustrator],
     logo: "/assets/images/portfolio/asset-design/kreate/logo.svg",
-    coverImage: "/assets/images/portfolio/asset-design/kreate/kreate.png",
+    coverImage: "/assets/images/portfolio/asset-design/kreate/cover-image.svg",
     showcaseImage1:
       "/assets/images/portfolio/asset-design/kreate/showcase-image-1.svg",
     showcaseImage2:
@@ -70,7 +70,7 @@ export const assets2D3DPortfolios: Portfolio[] = [
     frontend: [],
     infra: [],
     tools: [Rive, DaVinciResolve],
-    logo: "/assets/images/portfolio/asset-design/manta/logo.svg",
+    logo: "/assets/images/portfolio/asset-design/manta/logo.png",
     coverImage: "/assets/images/portfolio/asset-design/manta/cover-image.svg",
     showcaseImage1:
       "/assets/images/portfolio/asset-design/manta/showcase-image-1.svg",

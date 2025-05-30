@@ -20,7 +20,7 @@ export const webDevelopmentPortfolios: Portfolio[] = [
     tools: [],
     logo: "/assets/images/portfolio/web-development/nusatix/logo.png",
     coverImage:
-      "/assets/images/portfolio/web-development/nusatix/cover-image.webp",
+      "/assets/images/portfolio/web-development/nusatix/cover-image.svg",
     showcaseImage1:
       "/assets/images/portfolio/web-development/nusatix/showcase-image-1.svg",
     showcaseImage2:
@@ -66,7 +66,7 @@ export const webDevelopmentPortfolios: Portfolio[] = [
     tools: [],
     logo: "/assets/images/portfolio/web-development/menjadi-manusia/logo.webp",
     coverImage:
-      "/assets/images/portfolio/web-development/menjadi-manusia/cover-image.webp",
+      "/assets/images/portfolio/web-development/menjadi-manusia/cover-image.svg",
     showcaseImage1:
       "/assets/images/portfolio/web-development/menjadi-manusia/showcase-image-1.svg",
     showcaseImage2:
@@ -89,7 +89,7 @@ export const webDevelopmentPortfolios: Portfolio[] = [
     tools: [],
     logo: "/assets/images/portfolio/web-development/astrogang/logo.webp",
     coverImage:
-      "/assets/images/portfolio/web-development/astrogang/cover-image.webp",
+      "/assets/images/portfolio/web-development/astrogang/cover-image.svg",
     showcaseImage1:
       "/assets/images/portfolio/web-development/astrogang/showcase-image-1.svg",
     showcaseImage2:
@@ -112,7 +112,7 @@ export const webDevelopmentPortfolios: Portfolio[] = [
     tools: [],
     logo: "/assets/images/portfolio/web-development/ecoplease/logo.svg",
     coverImage:
-      "/assets/images/portfolio/web-development/ecoplease/cover-image.webp",
+      "/assets/images/portfolio/web-development/ecoplease/cover-image.svg",
     showcaseImage1:
       "/assets/images/portfolio/web-development/ecoplease/showcase-image-1.svg",
     showcaseImage2:
@@ -135,7 +135,7 @@ export const webDevelopmentPortfolios: Portfolio[] = [
     tools: [],
     logo: "/assets/images/portfolio/web-development/ini-lho-its-2023/logo.svg",
     coverImage:
-      "/assets/images/portfolio/web-development/ini-lho-its-2023/cover-image.webp",
+      "/assets/images/portfolio/web-development/ini-lho-its-2023/cover-image.svg",
     showcaseImage1:
       "/assets/images/portfolio/web-development/ini-lho-its-2023/showcase-image-1.svg",
     showcaseImage2:

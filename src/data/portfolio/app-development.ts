@@ -27,9 +27,9 @@ export const appDevelopmentPortfolios: Portfolio[] = [
     frontend: [Swift],
     infra: [Golang, GCP],
     tools: [],
-    logo: "/assets/images/portfolio/app-development/apical/logo.webp",
+    logo: "/assets/images/portfolio/app-development/apical/logo.svg",
     coverImage:
-      "/assets/images/portfolio/app-development/apical/cover-image.webp",
+      "/assets/images/portfolio/app-development/apical/cover-image.svg",
     showcaseImage1:
       "/assets/images/portfolio/app-development/apical/showcase-image-1.svg",
     showcaseImage2:
@@ -39,7 +39,7 @@ export const appDevelopmentPortfolios: Portfolio[] = [
     id: 2,
     category: AppDevelopment,
     title: "Hikewise",
-    description: `Hikewise`,
+    description: `Hikewise is a safety-first hiking companion app that bridges advanced technology with real-world outdoor exploration to empower safer, smarter adventures. Designed to enhance emergency preparedness and prevention, Hikewise connects hikers with nearby rangers through real-time tracking and an intuitive SOS alert. Built with a focus on accessibility and speed, the app enables hikers to instantly request help, share their live location, and stay informed with ranger-approved safety tips. By integrating localized ranger networks with seamless user experience, Hikewise transforms the way people explore nature—offering a new standard in outdoor safety, community support, and peace of mind on every trail.`,
     short_description:
       "An app that helps users track their journey in mountain.",
     members: "Bryan, Aldrich",
@@ -50,9 +50,9 @@ export const appDevelopmentPortfolios: Portfolio[] = [
     frontend: [Swift],
     infra: [Golang, GCP],
     tools: [],
-    logo: "/assets/images/portfolio/app-development/hikewise/logo.webp",
+    logo: "/assets/images/portfolio/app-development/hikewise/logo.png",
     coverImage:
-      "/assets/images/portfolio/app-development/hikewise/cover-image.webp",
+      "/assets/images/portfolio/app-development/hikewise/cover-image.svg",
     showcaseImage1:
       "/assets/images/portfolio/app-development/hikewise/showcase-image-1.svg",
     showcaseImage2:
@@ -73,9 +73,9 @@ export const appDevelopmentPortfolios: Portfolio[] = [
     frontend: [ReactJS, ReactNative],
     infra: [NodeJS, Laravel],
     tools: [],
-    logo: "/assets/images/portfolio/app-development/dealdulu/logo.webp",
+    logo: "/assets/images/portfolio/app-development/dealdulu/logo.svg",
     coverImage:
-      "/assets/images/portfolio/app-development/dealdulu/cover-image.webp",
+      "/assets/images/portfolio/app-development/dealdulu/cover-image.svg",
     showcaseImage1:
       "/assets/images/portfolio/app-development/dealdulu/showcase-image-1.svg",
     showcaseImage2:
@@ -96,9 +96,9 @@ export const appDevelopmentPortfolios: Portfolio[] = [
     frontend: [],
     infra: [NodeJS, Laravel],
     tools: [],
-    logo: "/assets/images/portfolio/app-development/evoria/logo.webp",
+    logo: "/assets/images/portfolio/app-development/evoria/logo.svg",
     coverImage:
-      "/assets/images/portfolio/app-development/evoria/cover-image.webp",
+      "/assets/images/portfolio/app-development/evoria/cover-image.svg",
     showcaseImage1:
       "/assets/images/portfolio/app-development/evoria/showcase-image-1.svg",
     showcaseImage2:
@@ -119,9 +119,9 @@ export const appDevelopmentPortfolios: Portfolio[] = [
     frontend: [],
     infra: [],
     tools: [Figma],
-    logo: "/assets/images/portfolio/app-development/cupk-mobile/logo.webp",
+    logo: "/assets/images/portfolio/app-development/cupk-mobile/logo.svg",
     coverImage:
-      "/assets/images/portfolio/app-development/cupk-mobile/cover-image.webp",
+      "/assets/images/portfolio/app-development/cupk-mobile/cover-image.svg",
     showcaseImage1:
       "/assets/images/portfolio/app-development/cupk-mobile/showcase-image-1.svg",
     showcaseImage2:
